@@ -1,0 +1,181 @@
+    /* =========================================================================
+       ANIMATE UI + REACT BITS MOTION LAYER
+       Tokens, Spring Press (0.97 / 0.985), Fine-Pointer Hover, Blur Swaps,
+       Gliding Tab Highlight, Warm Tooltips, Spotlight Cards & Reduced Motion
+       ========================================================================= */
+    :root {
+      --animate-tempo: 1;
+      --spring-press: cubic-bezier(0.22, 1.28, 0.36, 1);
+      --spring-highlight: cubic-bezier(0.25, 1.12, 0.35, 1);
+      --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-dismiss: cubic-bezier(0.32, 0, 0.67, 0);
+      --dur-press: calc(180ms * var(--animate-tempo));
+      --dur-swap: calc(220ms * var(--animate-tempo));
+      --dur-highlight: calc(340ms * var(--animate-tempo));
+      --dur-reveal: calc(460ms * var(--animate-tempo));
+      --spot-color: rgba(15, 122, 83, 0.06);
+    }
+    html.dark {
+      --spot-color: rgba(52, 211, 153, 0.08);
+    }
+
+    /* Animate UI Press Rule: 0.97 for buttons/pills, 0.985 for cards/rows; NEVER scale on hover */
+    button, .top-page-btn, .tab-btn, .bklit-seg-btn, .lux-pill-btn, .bklit-theme-btn, .chart-replay-btn, .cmp-country-pill {
+      transition:
+        transform var(--dur-press) var(--spring-press),
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+    button:active:not(:disabled),
+    .top-page-btn:active,
+    .tab-btn:active,
+    .bklit-seg-btn:active,
+    .lux-pill-btn:active,
+    .bklit-theme-btn:active,
+    .chart-replay-btn:active {
+      transform: scale(0.97) !important;
+    }
+    .bklit-stat-card, .modern-lift, [data-dist-card], .ub-stats button {
+      transition:
+        transform var(--dur-press) var(--spring-press),
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+    .bklit-stat-card:active, .modern-lift:active, [data-dist-card]:active, .ub-stats button:active {
+      transform: scale(0.985) !important;
+    }
+
+    /* Fine-pointer-only subtle hover feedback (no hover scale on pressed elements) */
+    @media (hover: hover) and (pointer: fine) {
+      .bklit-stat-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(240px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--spot-color), transparent 72%);
+        opacity: 0;
+        transition: opacity 0.24s ease;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .bklit-stat-card:hover::before { opacity: 1; }
+      .bklit-stat-card > * { position: relative; z-index: 1; }
+      .bklit-stat-card:hover {
+        box-shadow: 0 8px 22px -14px rgba(15, 26, 22, 0.18);
+      }
+      html.dark .bklit-stat-card:hover {
+        box-shadow: 0 10px 26px -14px rgba(0, 0, 0, 0.55);
+      }
+      #ubBackTopBtn:hover svg {
+        transform: translateY(-2px);
+      }
+      #btnTopMapQuick:hover svg {
+        transform: rotate(-6deg);
+      }
+      .chart-replay-btn:hover svg {
+        transform: rotate(-45deg);
+      }
+    }
+    #ubBackTopBtn svg, #btnTopMapQuick svg, .chart-replay-btn svg {
+      transition: transform var(--dur-press) var(--spring-press);
+    }
+
+    /* Animate UI Gliding Highlight Pill (TabsHighlight) */
+    .aui-glide-group {
+      position: relative;
+      isolation: isolate;
+    }
+    .aui-glide-pill {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      height: calc(100% - 6px);
+      border-radius: 999px;
+      background: var(--chart-1);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+      transition:
+        transform var(--dur-highlight) var(--spring-highlight),
+        width var(--dur-highlight) var(--spring-highlight),
+        opacity 0.16s ease;
+      will-change: transform, width;
+    }
+    .aui-glide-group > button {
+      position: relative;
+      z-index: 1;
+    }
+    .aui-glide-group.has-glide > button.active {
+      background: transparent !important;
+      color: #FFFFFF !important;
+    }
+    html.dark .aui-glide-group.has-glide > button.active {
+      color: #07140F !important;
+    }
+
+    /* Animate UI Light Blur Bridge for In-Place Swaps (Page Switch, Theme Icon, Text Swap) */
+    @keyframes auiBlurIn {
+      from { opacity: 0; filter: blur(4px); transform: translate3d(0, 6px, 0); }
+      to   { opacity: 1; filter: blur(0px); transform: translate3d(0, 0, 0); }
+    }
+    .aui-blur-swap {
+      animation: auiBlurIn var(--dur-swap) var(--ease-out-soft) both;
+    }
+    .page-view.active-page {
+      animation: auiBlurIn var(--dur-reveal) var(--ease-out-soft) both;
+    }
+
+    /* Animate UI Icon Swap (Sun <-> Moon) */
+    @keyframes auiIconSwap {
+      from { opacity: 0; filter: blur(3px); transform: rotate(-40deg) scale(0.75); }
+      to   { opacity: 1; filter: blur(0); transform: rotate(0deg) scale(1); }
+    }
+    .aui-icon-enter {
+      animation: auiIconSwap var(--dur-swap) var(--spring-press) both;
+    }
+
+    /* Warm Tooltip Instant Re-Target (Animate UI Warm Tooltip Rule) */
+    .chart-tooltip.is-warm {
+      transition: opacity 0.08s ease, transform 0.14s var(--ease-out-soft), left 0.11s var(--ease-out-soft), top 0.11s var(--ease-out-soft) !important;
+    }
+
+    /* Tempo Pill in Navbar */
+    .aui-tempo-btn {
+      height: 36px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ECF3EF;
+      font-size: 11px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .aui-tempo-btn:hover { border-color: #34D399; color: #34D399; background: rgba(52, 211, 153, 0.14); }
+
+    /* Keyboard focus-visible parity with pointer */
+    button:focus-visible, [tabindex]:focus-visible {
+      outline: 2px solid var(--chart-1);
+      outline-offset: 2px;
+    }
+
+    /* Strict Reduced Motion: fades & blurs stay, movement goes */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        --animate-tempo: 0.01;
+      }
+      .page-view.active-page, .aui-blur-swap, .aui-icon-enter {
+        animation: none !important;
+        transform: none !important;
+      }
+      .aui-glide-pill { transition: opacity 0.12s ease !important; }
+      button:active, .bklit-stat-card:active { transform: none !important; }
+    }
+

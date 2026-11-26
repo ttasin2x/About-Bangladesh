@@ -1,0 +1,705 @@
+    /* ===== Unseen Bangladesh v3 Corporate-Editorial Design System ===== */
+    :root {
+      --surface: #FFFFFF;
+      --bg: #FFFFFF;
+      --canvas-bg: #FFFFFF;
+      --canvas-sage: #F5F7F6;
+      --card-bg: #FFFFFF;
+      --card-pure: #FFFFFF;
+      --chip-bg: #F5F7F6;
+      --pill-muted: #EEF1EF;
+      --ink: #16211C;
+      --ink-body: #2B352F;
+      --muted: #5D6762;
+      --line: #E4E8E6;
+      --outline: #E4E8E6;
+      --brand: #0F6B4F;
+      --brand-deep: #0B4D36;
+      --deep: #0B4D36;
+      --brand-soft: #E6EFEA;
+      --sage: #E6EFEA;
+      --sageink: #3F6B58;
+      --mint-btn: #D3ECDD;
+      --mint-btn-hover: #C3E2D0;
+      --grey: #F5F7F6;
+      --grey2: #EEF1EF;
+      --obsidian: #0F1A16;
+      --obsidian-btn: #162620;
+      --accent: #B83B2A;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'NotoSansBengali', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-bottom: 0;
+    }
+    @media (max-width: 1023px) {
+      body { padding-bottom: 0; }
+      .ub-ft { padding-bottom: 88px; }
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'HindSiliguri', 'NotoSansBengali', system-ui, sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    /* Floating Frosted-Glass Top Navbar (Unseen Bangladesh signature) */
+    .ub-nav-wrap {
+      position: fixed;
+      top: 12px;
+      left: 0;
+      right: 0;
+      z-index: 70;
+      padding: 0 16px;
+      pointer-events: none;
+    }
+    .ub-nav {
+      pointer-events: auto;
+      max-width: 1260px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border: 1px solid rgba(228, 232, 230, 0.95);
+      box-shadow: 0 6px 24px -12px rgba(15, 26, 22, 0.14);
+    }
+    .ub-brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--deep);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ub-brand-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .ub-brand-logo {
+      height: 38px;
+      max-height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+    .ub-brand-btn:hover .ub-brand-logo {
+      transform: scale(1.02);
+    }
+    .ub-brand-loc {
+      display: none;
+      flex-direction: column;
+      padding-left: 10px;
+      border-left: 1px solid #E4E8E6;
+      text-align: left;
+    }
+    @media (min-width: 1280px) {
+      .ub-brand-loc {
+        display: flex;
+      }
+    }
+    .ub-footer-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      flex-shrink: 0;
+    }
+    .ub-footer-logo {
+      height: 30px;
+      max-height: 30px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      user-select: none;
+    }
+
+    /* Full-Bleed Photographic Hero (Unseen Bangladesh signature) */
+    .ub-hero {
+      position: relative;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      background: #0D2D24;
+      color: #FFFFFF;
+      overflow: visible;
+      padding: 108px 0 64px;
+    }
+    .ub-hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .ub-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      display: block;
+    }
+    .ub-hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(9, 24, 18, 0.56) 0%,
+        rgba(9, 24, 18, 0.48) 42%,
+        rgba(9, 24, 18, 0.86) 100%
+      );
+    }
+    .ub-hero-inner {
+      position: relative;
+      z-index: 5;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .ub-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #B7E4CC;
+      margin-bottom: 14px;
+    }
+    .ub-hero h1 {
+      margin: 0 0 14px;
+      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-weight: 600;
+      font-size: clamp(36px, 5.2vw, 60px);
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+    }
+    .ub-hero h1 em {
+      font-style: normal;
+      color: #9EE0BC;
+    }
+    .ub-hero-lead {
+      max-width: 680px;
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0 0 26px;
+    }
+    .ub-ask-box {
+      max-width: 760px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 8px 10px 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 18px 40px -16px rgba(4, 14, 10, 0.45);
+      position: relative;
+    }
+    .ub-ask-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+      max-width: 860px;
+    }
+    .ub-ask-chips button {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+      -webkit-backdrop-filter: blur(10px) saturate(1.2);
+      backdrop-filter: blur(10px) saturate(1.2);
+      border: 0;
+      border-radius: 9999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .ub-ask-chips button:hover {
+      background: rgba(255, 255, 255, 0.28);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+    }
+
+    /* Dark Obsidian Trust / Stats Strip (Unseen Bangladesh signature) */
+    .ub-trust {
+      background: #0F1A16;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      color: #FFFFFF;
+    }
+    .ub-stats {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      list-style: none;
+    }
+    @media (max-width: 1024px) {
+      .ub-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .ub-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .ub-stats li {
+      border-left: 1px solid rgba(255, 255, 255, 0.10);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ub-stats li:first-child { border-left: 0; }
+    .ub-stats button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      padding: 26px 20px;
+      cursor: pointer;
+      color: inherit;
+      transition: background 0.18s ease;
+      display: block;
+    }
+    .ub-stats button:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .ub-stats b {
+      display: block;
+      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-size: clamp(26px, 2.6vw, 36px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .ub-stats span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* Architectural Hairline Division Bar */
+    .ub-divbar {
+      background: var(--grey);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Architectural Hairline Card Surface (flat, 1px hairline, ZERO glow) */
+    .lux-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 1px 2px rgba(22, 33, 28, 0.03);
+    }
+
+    .modern-lift {
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s ease, background-color 0.18s ease;
+    }
+    .modern-lift:hover {
+      transform: translateY(-2px);
+      border-color: #C7D4CD;
+    }
+
+    /* Unseen Bangladesh Architectural Photo Heritage Grid */
+    .ub-cu-ey {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .ub-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    @media (max-width: 960px) {
+      .ub-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      .ub-photo-grid { grid-template-columns: 1fr; }
+    }
+    .ub-photo-card {
+      text-align: left;
+      background: #FFFFFF;
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 16px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: background 0.18s ease;
+    }
+    .ub-photo-card:hover {
+      background: #F5F7F6;
+    }
+    .ub-photo-card .ub-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--grey2);
+    }
+    .ub-photo-card .ub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .ub-photo-card:hover .ub-thumb img {
+      transform: scale(1.04);
+    }
+
+    .hero-topo {
+      background-color: #0B4D36;
+      background-image:
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1.2px),
+        linear-gradient(135deg, #0B4D36 0%, #0F6B4F 60%, #093E2B 100%);
+      background-size: 20px 20px, 100% 100%;
+    }
+
+    @keyframes pageEnter {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .lux-pill-btn {
+      background: var(--deep);
+      color: #FFFFFF;
+      border-radius: 10px;
+      transition: background-color 0.16s ease;
+    }
+    .lux-pill-btn:hover { background: #083B29; }
+
+    .lux-chip {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+      color: var(--ink);
+      transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    }
+    .lux-chip:hover { border-color: var(--brand); background: var(--sage); color: var(--deep); }
+    .lux-chip.active {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: #FFFFFF;
+    }
+
+    .micro-pill {
+      background: var(--sage);
+      color: var(--deep);
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .page-view { display: none; }
+    .page-view.active-page { display: block; animation: pageEnter 0.24s cubic-bezier(0.22, 1, 0.36, 1); }
+
+    /* Map Canvas — Unseen Bangladesh dot-grid visual stage */
+    .map-canvas {
+      background-color: #F3F7F5;
+      background-image: radial-gradient(#DDE6E1 1px, transparent 1.2px);
+      background-size: 20px 20px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .bd-district {
+      cursor: pointer;
+      transition: fill-opacity 0.16s ease, stroke 0.16s ease, stroke-width 0.16s ease;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .bd-district:hover { fill-opacity: 1 !important; stroke: #16211C; stroke-width: 1.3; }
+    .bd-district.div-mode-active { fill-opacity: 0.94; stroke: #FFFFFF; stroke-width: 0.9; }
+    .bd-district.div-mode-inactive { fill-opacity: 0.48; stroke: #FFFFFF; stroke-width: 0.65; }
+    .bd-district.div-mode-dimmed { fill-opacity: 0.18; stroke: #FFFFFF; stroke-width: 0.5; }
+    .bd-district.dist-mode-in-div { fill-opacity: 0.90; stroke: #FFFFFF; stroke-width: 1.0; }
+    .bd-district.dist-mode-other { fill-opacity: 0.34; stroke: #FFFFFF; stroke-width: 0.7; }
+    .bd-district.selected-district { fill: #B83B2A !important; fill-opacity: 1 !important; stroke: #FFFFFF !important; stroke-width: 2.1 !important; }
+
+    .map-pill-group { pointer-events: none; }
+    .map-pill-bg { fill: #FFFFFF; stroke: #CFD9D3; stroke-width: 1; }
+    .map-pill-bg.active-pill { fill: #0B4D36; stroke: #0B4D36; stroke-width: 1.2; }
+    .map-pill-text {
+      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: central;
+      fill: #16211C;
+    }
+    .map-pill-text.active-pill { fill: #FFFFFF; }
+
+    .dist-label {
+      pointer-events: none;
+      font-family: 'NotoSansBengali', sans-serif;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: central;
+      fill: #16211C;
+      paint-order: stroke;
+      stroke: #FFFFFF;
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }
+
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #C8D4CE; border-radius: 999px; }
+
+    #mapTooltip {
+      position: absolute;
+      z-index: 40;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(3px);
+      transition: opacity 0.14s ease, transform 0.14s ease;
+      max-width: 270px;
+    }
+    #mapTooltip.visible { opacity: 1; transform: translateY(0); }
+
+    .tab-btn {
+      border-radius: 10px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      color: var(--muted);
+    }
+    .tab-btn:hover { color: var(--ink); background: var(--grey2); }
+    .tab-btn.active { background: var(--deep); color: #FFFFFF; }
+
+    /* Top Nav Buttons */
+    .top-page-btn {
+      border-radius: 10px;
+      transition: background-color 0.16s ease, color 0.16s ease;
+      color: #35423C;
+    }
+    .top-page-btn:hover { background: var(--sage); color: var(--deep); }
+    .top-page-btn.active-nav { background: var(--deep); color: #FFFFFF; }
+
+    /* Mobile Bottom Dock (Hidden on Desktop for clean Unseen Bangladesh look) */
+    .obsidian-dock {
+      position: relative;
+      background: rgba(15, 26, 22, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 9999px;
+      padding: 6px;
+      width: min(98vw, 730px);
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 2px;
+      box-shadow: 0 16px 36px -14px rgba(15, 26, 22, 0.42);
+    }
+    .dock-bubble {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      left: 0;
+      border-radius: 9999px;
+      background: #0F6B4F;
+      z-index: 1;
+      pointer-events: none;
+      will-change: transform, width;
+      transition: transform 0.44s cubic-bezier(0.34, 1.48, 0.64, 1), width 0.36s cubic-bezier(0.34, 1.48, 0.64, 1);
+    }
+    .dock-bubble.bubble-pop {
+      animation: dockBubbleSquish 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes dockBubbleSquish {
+      0%   { transform: translateX(var(--bx, 0px)) scaleX(1) scaleY(1); }
+      35%  { transform: translateX(var(--bx, 0px)) scaleX(1.08) scaleY(0.92); }
+      70%  { transform: translateX(var(--bx, 0px)) scaleX(0.97) scaleY(1.03); }
+      100% { transform: translateX(var(--bx, 0px)) scaleX(1) scaleY(1); }
+    }
+    .dock-item {
+      position: relative;
+      z-index: 2;
+      background: transparent;
+      color: #A9B7AF;
+      border-radius: 9999px;
+      min-height: 46px;
+      padding: 6px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      font-size: 10px;
+      line-height: 1.15;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.22s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .dock-item svg { transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .dock-item:hover { color: #FFFFFF; }
+    .dock-item:active { transform: scale(0.94); }
+    .dock-item.active-nav { color: #FFFFFF; }
+    .dock-item.active-nav svg { transform: scale(1.12); }
+
+    /* Dark Obsidian Footer (Unseen Bangladesh signature) */
+    .ub-ft {
+      background: #0F1A16;
+      color: rgba(255, 255, 255, 0.78);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 56px;
+    }
+    .ub-ft-link {
+      background: transparent;
+      border: 0;
+      padding: 4px 0;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.16s ease;
+    }
+    .ub-ft-link:hover { color: #9EE0BC; }
+
+    .donut-slice { cursor: pointer; transition: opacity 0.16s ease; }
+
+    /* Butter-Smooth 60fps Animated Map Tour Styles — Crisp Flat Vector, Zero Glow */
+    .anim-dist-path {
+      transition: fill 0.65s cubic-bezier(0.22, 1, 0.36, 1), fill-opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.45s ease, stroke-width 0.45s ease;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .anim-route-done {
+      fill: none;
+      stroke: #0F6B4F;
+      stroke-width: 2;
+      stroke-dasharray: 5 6;
+      stroke-linecap: round;
+      opacity: 0.38;
+    }
+    @keyframes dashFlow {
+      from { stroke-dashoffset: 26; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .anim-route-active {
+      fill: none;
+      stroke: #0F1A16;
+      stroke-width: 2.8;
+      stroke-dasharray: 7 6;
+      stroke-linecap: round;
+    }
+    .anim-route-active.flowing { animation: dashFlow 0.95s linear infinite; }
+    .anim-dist-link {
+      fill: none;
+      stroke: #B83B2A;
+      stroke-width: 2.3;
+      stroke-dasharray: 4 5;
+      stroke-linecap: round;
+    }
+    .anim-dist-link.flowing { animation: dashFlow 0.8s linear infinite; }
+    @keyframes animRingExpand {
+      0%   { r: 5; opacity: 0.9; stroke-width: 2.6; }
+      100% { r: 36; opacity: 0; stroke-width: 0.6; }
+    }
+    .anim-pulse-ring {
+      fill: none;
+      stroke: #0F6B4F;
+      animation: animRingExpand 1.7s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    .anim-pulse-ring-dist {
+      fill: none;
+      stroke: #B83B2A;
+      animation: animRingExpand 1.45s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    @keyframes floatReveal {
+      0%   { opacity: 0; transform: translateY(18px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes staggerUp {
+      0%   { opacity: 0; transform: translateY(14px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .story-enter { animation: floatReveal 0.52s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .stagger-1 { animation: staggerUp 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both; }
+    .stagger-2 { animation: staggerUp 0.50s cubic-bezier(0.16, 1, 0.3, 1) 0.11s both; }
+    .stagger-3 { animation: staggerUp 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both; }
+    .stagger-4 { animation: staggerUp 0.54s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both; }
+
+    .map-float-card {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 28px -14px rgba(15, 26, 22, 0.20);
+      transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), transform 0.46s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .map-float-card.is-hidden { opacity: 0; transform: translateY(20px) scale(0.97); pointer-events: none; }
+    .map-float-card.is-shown { opacity: 1; transform: translateY(0) scale(1); }
+    @keyframes progressSweep {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .anim-route-ribbon { fill: none; stroke: rgba(15, 107, 79, 0.18); stroke-width: 9; stroke-linecap: round; }
+    .anim-dist-ribbon { fill: none; stroke: rgba(184, 59, 42, 0.16); stroke-width: 7; stroke-linecap: round; }
+    @keyframes pinBob {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-4px); }
+    }
+    .anim-pin-bob { animation: pinBob 2.2s ease-in-out infinite; }
+    @keyframes waveBar {
+      0%, 100% { transform: scaleY(0.35); }
+      50%      { transform: scaleY(1); }
+    }
+    .voice-bars { display: inline-flex; align-items: center; gap: 2px; height: 12px; }
+    .voice-bars span {
+      width: 2.5px; height: 100%; border-radius: 99px; background: currentColor;
+      transform-origin: center; animation: waveBar 0.75s ease-in-out infinite;
+    }
+    .voice-bars span:nth-child(2) { animation-delay: 0.18s; }
+    .voice-bars span:nth-child(3) { animation-delay: 0.34s; }
+    .float-progress-bar { transform-origin: left center; animation: progressSweep var(--step-dur, 4s) linear forwards; }
+

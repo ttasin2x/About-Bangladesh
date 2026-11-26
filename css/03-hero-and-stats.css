@@ -1,0 +1,313 @@
+    /* === Subtle Interface Refresh (Bangabhumi v2) & Video Hero + Subpage Spacing === */
+    :root {
+      --brand: #0C6B58;
+      --brand-deep: #084B3E;
+      --deep: #084B3E;
+      --brand-soft: #E4F2EE;
+      --sage: #E4F2EE;
+      --sageink: #34665A;
+      --mint-btn: #CEEBE2;
+      --mint-btn-hover: #BCE1D5;
+      --line: #DDE5E1;
+      --outline: #DDE5E1;
+      --accent: #C45D2C;
+    }
+
+    .ub-nav {
+      border-radius: 20px;
+      background: rgba(252, 253, 252, 0.92);
+      border: 1px solid rgba(214, 226, 220, 0.95);
+      box-shadow: 0 8px 26px -14px rgba(10, 28, 22, 0.16);
+    }
+    @media (min-width: 1024px) {
+      .ub-nav {
+        border-radius: 9999px;
+        padding: 9px 18px;
+      }
+    }
+
+    .ub-hero-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      pointer-events: none;
+    }
+    .ub-hero-shade {
+      background: linear-gradient(
+        155deg,
+        rgba(6, 22, 19, 0.62) 0%,
+        rgba(8, 28, 23, 0.44) 45%,
+        rgba(6, 20, 16, 0.86) 100%
+      );
+    }
+    .ub-eyebrow {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #CBEFE0;
+    }
+    .ub-eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 9999px;
+      background: #6EE7B7;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .ub-hero h1 em {
+      color: #8BE4C5;
+    }
+    .ub-ask-box {
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 20px 44px -18px rgba(4, 16, 12, 0.52);
+    }
+    .ub-trust {
+      background: #0C1A17;
+    }
+    .ub-divbar {
+      background: #F6F9F7;
+    }
+    .lux-card {
+      border-radius: 18px;
+      border-color: var(--line);
+    }
+
+    /* Subpages (Pages 2-7) hide the hero & trust bar, so give main clean top clearance below fixed nav */
+    body.subpage-active main#top {
+      padding-top: 86px !important;
+    }
+
+    /* Dynamic District / Division Famous Showcase */
+    .famous-spotlight-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 24px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      align-items: center;
+    }
+    @media (max-width: 820px) {
+      .famous-spotlight-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+    }
+    .famous-spotlight-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #E8F0EC;
+      border: 1px solid var(--line);
+    }
+    .famous-spotlight-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .famous-caption-chip {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      right: 12px;
+      padding: 7px 12px;
+      border-radius: 10px;
+      background: rgba(11, 26, 22, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .ub-photo-grid-dynamic {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    @media (max-width: 960px) {
+      .ub-photo-grid-dynamic { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .ub-photo-grid-dynamic { grid-template-columns: 1fr; }
+    }
+    .famous-dist-card {
+      text-align: left;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s ease, background 0.18s ease;
+    }
+    .famous-dist-card:hover {
+      transform: translateY(-2px);
+      border-color: #B6CEC5;
+      background: #F7FAF8;
+    }
+    .famous-dist-card .ub-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 11px;
+      overflow: hidden;
+      background: #E8F0EC;
+      position: relative;
+    }
+    .famous-dist-card .ub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .famous-dist-card:hover .ub-thumb img {
+      transform: scale(1.04);
+    }
+
+
+    /* === Refined Architectural Neutral Stats Bar (Zero Heavy Green) === */
+    .ub-trust {
+      background: #F6F7F6 !important;
+      border-top: 1px solid #E5E8E6 !important;
+      border-bottom: 1px solid #E5E8E6 !important;
+      color: #161C19 !important;
+      padding: 20px 16px;
+    }
+    .ub-stats {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 !important;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      list-style: none;
+    }
+    @media (max-width: 1080px) {
+      .ub-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .ub-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    }
+    .ub-stats li {
+      border: 0 !important;
+    }
+    .ub-stats button {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      background: #FFFFFF !important;
+      border: 1px solid #E4E7E5 !important;
+      border-radius: 14px;
+      padding: 18px 16px 16px !important;
+      cursor: pointer;
+      color: #161C19 !important;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s ease, box-shadow 0.2s ease, background 0.18s ease;
+    }
+    .ub-stats button:hover {
+      transform: translateY(-2px);
+      background: #FFFFFF !important;
+      border-color: #C7CECA !important;
+      box-shadow: 0 8px 20px -14px rgba(18, 24, 21, 0.22);
+    }
+    .ub-stat-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .ub-stat-dot {
+      width: 24px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--stat-accent, #2C3A35);
+      display: inline-block;
+    }
+    .ub-stat-arrow {
+      font-size: 13px;
+      color: #9AA39E;
+      transition: transform 0.18s ease, color 0.18s ease;
+    }
+    .ub-stats button:hover .ub-stat-arrow {
+      transform: translateX(3px);
+      color: #161C19;
+    }
+    .ub-stats b {
+      display: block;
+      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-size: clamp(22px, 2.2vw, 30px) !important;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #141917 !important;
+      letter-spacing: -0.02em;
+      margin: 4px 0 4px !important;
+    }
+    .ub-stats span.ub-stat-label {
+      display: block;
+      font-size: 12.5px !important;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #5C6560 !important;
+    }
+
+
+    /* === Ultra-Compact Vertically Squeezed Stats Strip === */
+    .ub-trust {
+      padding: 9px 16px !important;
+    }
+    .ub-stats {
+      gap: 8px !important;
+    }
+    @media (max-width: 600px) {
+      .ub-stats { gap: 6px !important; }
+    }
+    .ub-stats button {
+      border-radius: 10px !important;
+      padding: 9px 12px 8px !important;
+      gap: 3px !important;
+    }
+    .ub-stat-dot {
+      width: 16px !important;
+      height: 2.5px !important;
+    }
+    .ub-stat-arrow {
+      font-size: 11px !important;
+      line-height: 1;
+    }
+    .ub-stats b {
+      font-size: clamp(18px, 1.7vw, 22px) !important;
+      line-height: 1.05 !important;
+      margin: 1px 0 2px !important;
+    }
+    .ub-stats span.ub-stat-label {
+      font-size: 11.5px !important;
+      line-height: 1.25 !important;
+    }
+
+
+    .ub-ft .ub-ft-link {
+      padding: 1px 0 !important;
+      line-height: 1.35 !important;
+      font-size: 12.5px !important;
+    }
+
+

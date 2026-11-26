@@ -1,0 +1,350 @@
+    /* === Search Dropdown Stacking Context Fix + Upgraded Cartographic Map Styles === */
+    .ub-hero {
+      z-index: 30;
+      overflow: visible !important;
+    }
+    .ub-hero-inner {
+      z-index: 20;
+    }
+    .ub-ask-box {
+      position: relative;
+      z-index: 90 !important;
+    }
+    .ub-ask-chips {
+      position: relative;
+      z-index: 10;
+    }
+    #globalSearchResults {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 10px);
+      z-index: 9999 !important;
+      background: #FFFFFF !important;
+      color: #0F1C17 !important;
+      border: 1px solid rgba(12, 42, 32, 0.14) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 28px 60px -16px rgba(6, 24, 18, 0.36) !important;
+      overflow-y: auto;
+      max-height: 340px;
+    }
+    #globalSearchResults.hidden {
+      display: none !important;
+    }
+    #btnGlobalSearch {
+      width: 34px;
+      height: 34px;
+      border-radius: 9999px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.10);
+      color: #6EE7B7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    #btnGlobalSearch:hover {
+      background: rgba(255, 255, 255, 0.20);
+    }
+    #btnClearGlobalSearch {
+      width: 26px;
+      height: 26px;
+      border-radius: 9999px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    #btnClearGlobalSearch.hidden {
+      display: none !important;
+    }
+
+    /* Upgraded Cartographic Map Stage */
+    .map-canvas {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.72) 0%, rgba(235, 246, 241, 0.45) 55%, rgba(220, 238, 230, 0.65) 100%),
+        radial-gradient(rgba(11, 77, 54, 0.13) 1px, transparent 1.2px) !important;
+      background-size: 100% 100%, 20px 20px !important;
+      border: 1px solid #D5E4DC !important;
+      border-radius: 22px !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -18px 40px -24px rgba(11, 77, 54, 0.14);
+    }
+    .map-sea-label {
+      pointer-events: none;
+      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-anchor: middle;
+      fill: rgba(11, 77, 54, 0.34);
+    }
+    .bd-district {
+      transition: fill-opacity 0.18s ease, stroke 0.18s ease, stroke-width 0.18s ease, filter 0.18s ease;
+    }
+    .bd-district:hover {
+      fill-opacity: 1 !important;
+      stroke: #071A13 !important;
+      stroke-width: 1.65 !important;
+      filter: brightness(1.07);
+    }
+    .bd-district.selected-district {
+      fill: url(#bdSelectedGrad) !important;
+      fill-opacity: 1 !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 2.3 !important;
+      filter: drop-shadow(0 4px 10px rgba(184, 59, 42, 0.35));
+    }
+    .dist-label.active-dist-label {
+      fill: #FFFFFF !important;
+      stroke: #8A2114 !important;
+      stroke-width: 3.4px !important;
+      font-weight: 800 !important;
+    }
+    .map-pill-group {
+      pointer-events: auto !important;
+    }
+    .map-pill-bg {
+      fill: rgba(255, 255, 255, 0.95);
+      stroke: rgba(11, 77, 54, 0.20);
+      stroke-width: 1.1;
+      filter: drop-shadow(0 4px 10px rgba(7, 25, 19, 0.12));
+      transition: fill 0.18s ease, stroke 0.18s ease;
+    }
+    .map-pill-group:hover .map-pill-bg:not(.active-pill) {
+      fill: #F0F9F5;
+      stroke: #0B4D36;
+    }
+    .map-pill-bg.active-pill {
+      fill: #0B3B2B;
+      stroke: #0B3B2B;
+    }
+    @keyframes mapBeaconPulse {
+      0% { transform: scale(0.55); opacity: 0.9; }
+      70% { transform: scale(1.9); opacity: 0; }
+      100% { transform: scale(1.9); opacity: 0; }
+    }
+    .map-selected-beacon {
+      pointer-events: none;
+    }
+    .map-selected-beacon .beacon-ring {
+      fill: rgba(255, 255, 255, 0.45);
+      stroke: #FFFFFF;
+      stroke-width: 1.8;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: mapBeaconPulse 1.9s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+    .map-selected-beacon .beacon-core {
+      fill: #FFFFFF;
+      stroke: #A62B1D;
+      stroke-width: 2;
+    }
+
+    /* === Whole-Site Professional Editorial Polish (Division Option Strip, Bottom Dock, Cards, Directory, Timeline & Footer) === */
+
+    /* 1. Upgraded Division Option Strip (#divisionPillsWrap & .lux-chip) */
+    .ub-divbar {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(12, 42, 32, 0.07) !important;
+      border-bottom: 1px solid rgba(12, 42, 32, 0.08) !important;
+      box-shadow: 0 8px 24px -18px rgba(7, 32, 24, 0.14) !important;
+    }
+    #divisionPillsWrap > div {
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+      gap: 12px !important;
+    }
+    #divisionPillsWrap > div > span:first-child {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      background: #EAF4EF;
+      color: #0B4D36;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(11, 77, 54, 0.12);
+    }
+    #divisionPills {
+      gap: 8px !important;
+    }
+    .lux-chip {
+      border-radius: 9999px !important;
+      background: #FFFFFF !important;
+      color: #1A2B24 !important;
+      border: 1px solid rgba(12, 42, 32, 0.11) !important;
+      box-shadow: 0 1px 2px rgba(7, 32, 24, 0.04) !important;
+      padding: 0 15px !important;
+      height: 36px !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      cursor: pointer;
+      transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.2s ease !important;
+    }
+    .lux-chip:hover {
+      background: #F1F8F4 !important;
+      color: #0B4D36 !important;
+      border-color: rgba(11, 77, 54, 0.28) !important;
+      transform: translateY(-1.5px);
+      box-shadow: 0 8px 18px -12px rgba(7, 38, 28, 0.22) !important;
+    }
+    .lux-chip.active {
+      background: #0B3B2B !important;
+      color: #FFFFFF !important;
+      border-color: #0B3B2B !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 10px 22px -12px rgba(7, 38, 28, 0.46) !important;
+    }
+    .lux-chip.active span:last-child {
+      opacity: 0.88 !important;
+      color: #A7F3D0 !important;
+    }
+
+    /* 2. Upgraded Floating Mobile/Tablet Bottom Dock (.obsidian-dock) */
+    .obsidian-dock {
+      background: rgba(7, 22, 17, 0.88) !important;
+      backdrop-filter: blur(20px) saturate(1.5) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.5) !important;
+      border: 1px solid rgba(167, 243, 208, 0.16) !important;
+      border-radius: 9999px !important;
+      padding: 5px !important;
+      box-shadow: 0 22px 48px -12px rgba(4, 18, 13, 0.56), inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+    }
+    .dock-bubble {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border: 1px solid rgba(167, 243, 208, 0.24) !important;
+      border-radius: 9999px !important;
+    }
+    .dock-item {
+      color: rgba(230, 246, 239, 0.74) !important;
+      border-radius: 9999px !important;
+      transition: color 0.18s ease, transform 0.16s ease !important;
+    }
+    .dock-item.active-nav {
+      color: #FFFFFF !important;
+    }
+
+    /* 3. Refined Editorial Stats Tiles (#ubTrustBar / .ub-stats) */
+    .ub-trust {
+      padding: 18px 16px 14px !important;
+    }
+    .ub-stats button {
+      padding: 14px 16px !important;
+      border-radius: 18px !important;
+      border: 1px solid rgba(12, 42, 32, 0.08) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 1px 2px rgba(7, 32, 24, 0.03), 0 8px 20px -18px rgba(7, 32, 24, 0.14) !important;
+    }
+    .ub-stats button:hover {
+      transform: translateY(-2.5px) !important;
+      border-color: rgba(11, 77, 54, 0.22) !important;
+      box-shadow: 0 14px 28px -18px rgba(7, 38, 28, 0.24) !important;
+    }
+    .ub-stats strong,
+    .ub-stats .ub-stat-num {
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    /* 4. Elevated Section Rhythm, Headers, Eyebrows & Architectural Cards */
+    main#top {
+      padding-top: 24px !important;
+      padding-bottom: 16px !important;
+    }
+    main#top h2 {
+      letter-spacing: -0.02em;
+      color: #0D1F18;
+    }
+    .lux-card {
+      border-radius: 22px !important;
+      border: 1px solid rgba(12, 42, 32, 0.08) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 1px 2px rgba(7, 32, 24, 0.03), 0 16px 38px -28px rgba(7, 32, 24, 0.14) !important;
+    }
+
+    /* 5. Map Workspace Header Controls & Zoom Buttons */
+    #mapWorkspace .lux-card {
+      overflow: hidden;
+    }
+    #mapContainer button[id^="btnZoom"],
+    #mapContainer button[id^="btnReset"] {
+      background: rgba(255, 255, 255, 0.94) !important;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(12, 42, 32, 0.12) !important;
+      box-shadow: 0 6px 16px -10px rgba(7, 32, 24, 0.22);
+      color: #0F1C17 !important;
+    }
+    #mapContainer button[id^="btnZoom"]:hover,
+    #mapContainer button[id^="btnReset"]:hover {
+      background: #0B3B2B !important;
+      color: #FFFFFF !important;
+      border-color: #0B3B2B !important;
+      transform: translateY(-1px);
+    }
+
+    /* 6. Famous Showcase, 64-District Directory & National Timeline Polish */
+    .famous-spotlight-card {
+      border-radius: 22px !important;
+      border: 1px solid rgba(12, 42, 32, 0.08) !important;
+      box-shadow: 0 1px 2px rgba(7, 32, 24, 0.03), 0 16px 38px -28px rgba(7, 32, 24, 0.14) !important;
+      padding: 22px !important;
+    }
+    .famous-spotlight-card img {
+      border-radius: 16px !important;
+    }
+    #allDistrictsDirectory > div {
+      border-radius: 18px !important;
+      border: 1px solid rgba(12, 42, 32, 0.08) !important;
+      background: #FAFDFB !important;
+      transition: border-color 0.2s ease, box-shadow 0.22s ease, transform 0.2s ease;
+    }
+    #allDistrictsDirectory > div:hover {
+      border-color: rgba(11, 77, 54, 0.22) !important;
+      box-shadow: 0 12px 28px -20px rgba(7, 38, 28, 0.20);
+      transform: translateY(-2px);
+    }
+    #allDistrictsDirectory button[data-dir-dist] {
+      border-radius: 9999px !important;
+      transition: transform 0.16s ease, background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+    }
+    #allDistrictsDirectory button[data-dir-dist]:hover {
+      background: #0B3B2B !important;
+      color: #FFFFFF !important;
+      border-color: #0B3B2B !important;
+      transform: translateY(-1px);
+    }
+    #nationalTimelineGrid > button,
+    #nationalTimelineGrid > div {
+      border-radius: 18px !important;
+      border: 1px solid rgba(12, 42, 32, 0.09) !important;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease, border-color 0.2s ease;
+    }
+    #nationalTimelineGrid > button:hover,
+    #nationalTimelineGrid > div:hover {
+      transform: translateY(-2px);
+      border-color: rgba(11, 77, 54, 0.28) !important;
+      box-shadow: 0 14px 28px -18px rgba(7, 38, 28, 0.22);
+    }
+
+    /* 7. Polished Closing Footer Spacing & Typography */
+    .ub-ft > div {
+      padding-top: 32px !important;
+      padding-bottom: 28px !important;
+    }
+    .ub-footer-logo-badge {
+      border-radius: 9999px !important;
+      padding: 6px 14px !important;
+      box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.45);
+    }
+

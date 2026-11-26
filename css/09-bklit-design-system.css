@@ -1,0 +1,315 @@
+    /* =========================================================================
+       BKLIT UI DESIGN SYSTEM — TOKENS, LIGHT & DARK MODE, MOTION & PRIMITIVES
+       ========================================================================= */
+    :root {
+      --radius: 16px;
+      --chart-1: #0F7A53;
+      --chart-2: #1F6A78;
+      --chart-3: #C96A2B;
+      --chart-4: #B83B2A;
+      --chart-5: #4B5C54;
+      --chart-line-primary: #0F7A53;
+      --chart-line-secondary: #7C8B84;
+      --chart-grid: rgba(22, 33, 28, 0.11);
+      --chart-crosshair: #0F7A53;
+      --chart-track: #E6EFEA;
+      --chart-surface: #FFFFFF;
+      --chart-surface-muted: #F4F7F5;
+      --chart-border: #E2E8E5;
+      --chart-ink: #16211C;
+      --chart-muted: #5D6762;
+      --chart-tooltip-bg: rgba(255, 255, 255, 0.98);
+      --chart-tooltip-border: #C5D7CE;
+      --chart-tooltip-fg: #16211C;
+      --chart-positive: #0F7A53;
+      --chart-positive-bg: #E2F3EB;
+      --chart-negative: #B83B2A;
+      --chart-negative-bg: #FBE9E7;
+      --chart-scale-01: #E6F3EC;
+      --chart-scale-02: #B7DEC9;
+      --chart-scale-03: #6BB893;
+      --chart-scale-04: #2D8E66;
+      --chart-scale-05: #0B4D36;
+      --bklit-ease: cubic-bezier(0.85, 0, 0.15, 1);
+      --bklit-duration: 1100ms;
+    }
+
+    html.dark {
+      --surface: #0D1512;
+      --bg: #0A110E;
+      --canvas-bg: #0A110E;
+      --canvas-sage: #111C17;
+      --card-bg: #111A16;
+      --card-pure: #111A16;
+      --chip-bg: #16231D;
+      --pill-muted: #1A2922;
+      --ink: #ECF3EF;
+      --ink-body: #C5D2CB;
+      --muted: #8FA197;
+      --line: #21322A;
+      --outline: #21322A;
+      --brand: #34D399;
+      --brand-deep: #10B981;
+      --deep: #10B981;
+      --brand-soft: #152820;
+      --sage: #152820;
+      --sageink: #7CC7A4;
+      --mint-btn: #163227;
+      --mint-btn-hover: #1E4435;
+      --grey: #131E19;
+      --grey2: #192721;
+
+      --chart-1: #34D399;
+      --chart-2: #38BDF8;
+      --chart-3: #F59E0B;
+      --chart-4: #FB7185;
+      --chart-5: #94A3B8;
+      --chart-line-primary: #34D399;
+      --chart-line-secondary: #8FA197;
+      --chart-grid: rgba(236, 243, 239, 0.12);
+      --chart-crosshair: #34D399;
+      --chart-track: #1A2A23;
+      --chart-surface: #111A16;
+      --chart-surface-muted: #16231D;
+      --chart-border: #22342C;
+      --chart-ink: #ECF3EF;
+      --chart-muted: #93A69C;
+      --chart-tooltip-bg: rgba(16, 25, 21, 0.98);
+      --chart-tooltip-border: #2A4036;
+      --chart-tooltip-fg: #ECF3EF;
+      --chart-positive: #34D399;
+      --chart-positive-bg: rgba(52, 211, 153, 0.14);
+      --chart-negative: #FB7185;
+      --chart-negative-bg: rgba(251, 113, 133, 0.14);
+      --chart-scale-01: #132A20;
+      --chart-scale-02: #194534;
+      --chart-scale-03: #1E6B4F;
+      --chart-scale-04: #25996F;
+      --chart-scale-05: #34D399;
+    }
+
+    /* Dark Mode Surface & Tailwind Utility Harmony */
+    html.dark body { background: var(--bg); color: var(--ink); }
+    html.dark .ub-nav {
+      background: rgba(14, 23, 19, 0.88);
+      border-color: rgba(42, 64, 54, 0.85);
+      box-shadow: 0 8px 28px -12px rgba(0, 0, 0, 0.55);
+    }
+    html.dark .ub-brand-loc { border-left-color: #24362E; }
+    html.dark .ub-divbar { background: #0E1713; border-bottom-color: #21322A; }
+    html.dark .lux-card {
+      background: var(--card-bg);
+      border-color: var(--line);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
+    }
+    html.dark .bg-white { background-color: #111A16 !important; }
+    html.dark .bg-\[\#F5F7F6\], html.dark .bg-\[\#F5F7F2\], html.dark .bg-\[\#F3F7F5\], html.dark .bg-\[\#F1F4EE\], html.dark .bg-\[\#F7FAF8\] {
+      background-color: #15211C !important;
+    }
+    html.dark .bg-\[\#E6EFEA\], html.dark .bg-\[\#DCEFE5\], html.dark .bg-\[\#EDF5F0\], html.dark .bg-\[\#E6F2EC\], html.dark .bg-\[\#E4F2EE\] {
+      background-color: #162B22 !important;
+    }
+    html.dark .bg-\[\#E6EEF2\], html.dark .bg-\[\#E3EFF5\] { background-color: #142630 !important; }
+    html.dark .border-\[\#E4E8E6\], html.dark .border-\[\#E5E8E0\], html.dark .border-\[\#EAECE6\], html.dark .border-\[\#DDE5E1\], html.dark .border-\[\#DCE6DF\], html.dark .border-\[\#D5E6DC\] {
+      border-color: #22342C !important;
+    }
+    html.dark .divide-\[\#EAECE6\] > :not([hidden]) ~ :not([hidden]) { border-color: #22342C !important; }
+    html.dark .text-\[\#16211C\], html.dark .text-\[\#111613\], html.dark .text-\[\#143025\] { color: #ECF3EF !important; }
+    html.dark .text-\[\#2B352F\] { color: #C5D2CB !important; }
+    html.dark .text-\[\#5D6762\] { color: #93A69C !important; }
+    html.dark .text-\[\#0F6B4F\], html.dark .text-\[\#0C6B58\], html.dark .text-\[\#084B3E\] { color: #34D399 !important; }
+    html.dark .text-\[\#1F5A7A\] { color: #38BDF8 !important; }
+    html.dark .top-page-btn { color: #C5D2CB; }
+    html.dark .top-page-btn:hover { background: #192922; color: #ECF3EF; }
+    html.dark .top-page-btn.active-nav { background: #10B981; color: #07140F; }
+    html.dark .tab-btn { color: #9DB0A6; }
+    html.dark .tab-btn.active { background: #10B981; color: #07140F; }
+    html.dark .micro-pill { background: #182821; color: #C5D2CB; border-color: #253A31; }
+    html.dark .chart-replay-btn { background: #16241E; border-color: #273D33; color: #34D399; }
+    html.dark .chart-replay-btn:hover { background: #1D3128; }
+    html.dark .ub-ask-box { background: #111A16; border-color: #273D33; }
+    html.dark .ub-ask-box input { color: #ECF3EF !important; }
+    html.dark .map-canvas { background: #0E1713 !important; }
+    html.dark #mapLiveHud { background: rgba(17, 26, 22, 0.92) !important; color: #ECF3EF !important; border-color: #263B31 !important; }
+    html.dark .ub-brand-logo { filter: brightness(1.08); }
+
+    /* Refined Bklit UI Card & Tooltip Precision */
+    .lux-card {
+      border-radius: var(--radius);
+      border-color: var(--chart-border);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .chart-tooltip {
+      background: var(--chart-tooltip-bg);
+      border: 1px solid var(--chart-tooltip-border);
+      color: var(--chart-tooltip-fg);
+      border-radius: 12px;
+      font-variant-numeric: tabular-nums;
+      backdrop-filter: blur(10px);
+    }
+    .chart-anim-bar {
+      transition: width var(--bklit-duration) var(--bklit-ease);
+      transition-delay: calc(var(--bar-idx, 0) * 65ms);
+    }
+    .bklit-num { font-variant-numeric: tabular-nums; }
+
+    /* Bklit Stat Card + Interactive Sparkline */
+    .bklit-stat-card {
+      background: var(--chart-surface);
+      border: 1px solid var(--chart-border);
+      border-radius: var(--radius);
+      padding: 16px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bklit-stat-card:hover {
+      border-color: var(--chart-1);
+    }
+    .bklit-trend-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .bklit-trend-badge.pos { background: var(--chart-positive-bg); color: var(--chart-positive); }
+    .bklit-trend-badge.neg { background: var(--chart-negative-bg); color: var(--chart-negative); }
+    .bklit-sparkline-wrap {
+      width: 100%;
+      height: 46px;
+      position: relative;
+      cursor: crosshair;
+      touch-action: none;
+    }
+    .bklit-sparkline-wrap svg { width: 100%; height: 100%; overflow: visible; display: block; }
+
+    /* Bklit BarSquares (Squircle LED-Meter Segmented Bar + Ghost Track) */
+    .bklit-squircle-track {
+      display: grid;
+      grid-template-columns: repeat(24, minmax(0, 1fr));
+      gap: 3px;
+      width: 100%;
+      padding: 4px;
+      background: var(--chart-surface-muted);
+      border: 1px solid var(--chart-border);
+      border-radius: 10px;
+      position: relative;
+    }
+    .bklit-sq-cell {
+      height: 14px;
+      border-radius: 4px;
+      background: var(--chart-track);
+      transition: background-color 0.25s ease, transform 0.22s var(--bklit-ease), opacity 0.22s ease;
+    }
+    .bklit-sq-cell.is-filled {
+      background: var(--sq-color, var(--chart-1));
+      animation: bklitSqPop 0.48s var(--bklit-ease) both;
+      animation-delay: calc(var(--sq-idx, 0) * 18ms);
+    }
+    .chart-row-interactive:hover .bklit-sq-cell.is-filled {
+      filter: brightness(1.06);
+    }
+    @keyframes bklitSqPop {
+      from { opacity: 0.18; transform: scaleY(0.35); }
+      to { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* Bklit Chart Style Segmented Switcher */
+    .bklit-seg-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 3px;
+      border-radius: 999px;
+      background: var(--chart-surface-muted);
+      border: 1px solid var(--chart-border);
+    }
+    .bklit-seg-btn {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--chart-muted);
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: background-color 0.18s ease, color 0.18s ease;
+      white-space: nowrap;
+    }
+    .bklit-seg-btn:hover { color: var(--chart-ink); }
+    .bklit-seg-btn.active {
+      background: var(--chart-1);
+      color: #FFFFFF;
+    }
+    html.dark .bklit-seg-btn.active { color: #07140F; }
+
+    /* Bklit Skeleton Shimmer State (status="loading") */
+    .bklit-shimmer {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .bklit-shimmer::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(15, 122, 83, 0.12) 50%, transparent 100%);
+      transform: translateX(-100%);
+      animation: bklitSweep 0.65s ease-in-out infinite;
+      pointer-events: none;
+    }
+    html.dark .bklit-shimmer::after {
+      background: linear-gradient(90deg, transparent 0%, rgba(52, 211, 153, 0.14) 50%, transparent 100%);
+    }
+    @keyframes bklitSweep {
+      100% { transform: translateX(100%); }
+    }
+
+    /* External Bklit Legend Row with LegendProgress */
+    .bklit-legend-progress {
+      height: 3px;
+      width: 100%;
+      border-radius: 999px;
+      background: var(--chart-track);
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    .bklit-legend-progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.85s var(--bklit-ease);
+    }
+
+    /* Theme Toggle Button */
+    .bklit-theme-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ECF3EF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    }
+    .bklit-theme-btn:hover { border-color: #34D399; background: rgba(52, 211, 153, 0.16); color: #34D399; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chart-anim-bar, .bklit-sq-cell.is-filled, .bklit-legend-progress-fill {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+

@@ -1,0 +1,317 @@
+    /* === MapBangladesh.com Exact Color Palette, Editorial Patterns, Button System & Scroll/Text Animations === */
+    :root {
+      --top: #eef6f0;
+      --top-2: #e3f1e8;
+      --bg: #f5f6f3;
+      --surface: #ffffff;
+      --canvas-bg: #f5f6f3;
+      --canvas-sage: #eef6f0;
+      --card: #ffffff;
+      --card-bg: #ffffff;
+      --ink: #0d1411;
+      --ink-body: #33413a;
+      --muted: #6a736e;
+      --line: #e2e5e1;
+      --outline: #e2e5e1;
+      --accent: #0f6b4f;
+      --accent-2: #d9efe3;
+      --brand: #0f6b4f;
+      --brand-deep: #0b4d36;
+      --deep: #0d1411;
+      --dk: #040605;
+      --on-dark: #eef3f0;
+      --on-dark-muted: #8f9c95;
+      --mint-glow: #7fd3a8;
+    }
+
+    p, li, dd, figcaption, blockquote, summary, small { text-wrap: pretty; }
+    h1, h2 { text-wrap: balance; }
+    body {
+      background: var(--bg) !important;
+      color: var(--ink) !important;
+    }
+
+    /* MapBangladesh Signature Dot-Grid + Soft Mint Glow Over Full-Bleed Video Hero */
+    .ub-hero {
+      background: #07130e !important;
+      isolation: isolate;
+    }
+    .ub-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(127, 211, 168, 0.16) 1px, transparent 1.2px);
+      background-size: 18px 18px;
+      -webkit-mask-image: radial-gradient(88% 72% at 50% 48%, #000 30%, transparent 86%);
+      mask-image: radial-gradient(88% 72% at 50% 48%, #000 30%, transparent 86%);
+    }
+    .ub-hero-shade {
+      background:
+        radial-gradient(ellipse 76% 52% at 50% 105%, rgba(127, 211, 168, 0.34) 0%, rgba(15, 107, 79, 0.28) 42%, rgba(7, 19, 14, 0) 74%),
+        linear-gradient(180deg, rgba(7, 19, 14, 0.66) 0%, rgba(7, 19, 14, 0.42) 48%, rgba(7, 19, 14, 0.86) 100%) !important;
+    }
+    .ub-hero h1 em {
+      color: #7fd3a8 !important;
+    }
+    .ub-eyebrow {
+      background: rgba(255, 255, 255, 0.10) !important;
+      border: 1px solid rgba(127, 211, 168, 0.28) !important;
+      color: #eef3f0 !important;
+    }
+    .ub-eyebrow::before {
+      background: #7fd3a8 !important;
+    }
+
+    /* MapBangladesh Pill Navbar (.bar style on scroll) */
+    .ub-nav-wrap[data-tucked="true"] .ub-nav,
+    body.subpage-active .ub-nav {
+      background: rgba(255, 255, 255, 0.84) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important;
+      border: 1px solid var(--line) !important;
+      box-shadow: 0 10px 30px -18px rgba(15, 50, 35, 0.22) !important;
+    }
+    .ub-nav-wrap[data-tucked="true"] .ts-nav-chip,
+    body.subpage-active .ts-nav-chip {
+      background: var(--ink) !important;
+    }
+
+    /* MapBangladesh Signature Circular Arrow Badge (.ar) inside Primary Hero CTA */
+    #btnCycleDivision {
+      background: #ffffff !important;
+      color: var(--ink) !important;
+      padding: 0 8px 0 18px !important;
+      gap: 10px !important;
+    }
+    #btnCycleDivision span[aria-hidden="true"] {
+      display: inline-grid !important;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      color: var(--accent);
+      font-size: 13px;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease;
+    }
+    #btnCycleDivision:hover span[aria-hidden="true"] {
+      transform: translateX(3px);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* MapBangladesh Unified Hairline Stats Strip (.stats pattern) */
+    .ub-trust {
+      background: linear-gradient(180deg, var(--top) 0%, var(--bg) 100%) !important;
+      padding: 20px 16px 16px !important;
+    }
+    .ub-stats {
+      background: var(--line) !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      gap: 1px !important;
+      box-shadow: 0 24px 50px -40px rgba(15, 50, 35, 0.32) !important;
+    }
+    .ub-stats button {
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: var(--card) !important;
+      box-shadow: none !important;
+      padding: 16px 14px !important;
+      transition: background-color 0.2s ease !important;
+    }
+    .ub-stats button:hover {
+      transform: none !important;
+      background: #fafcfa !important;
+      box-shadow: none !important;
+    }
+
+    /* MapBangladesh Soft Botanical-Mint Division Strip (.top + .facts/.langs pattern) */
+    .ub-divbar {
+      background: linear-gradient(180deg, var(--top) 0%, var(--top-2) 100%) !important;
+      border-top: 1px solid var(--line) !important;
+      border-bottom: 1px solid var(--line) !important;
+      box-shadow: none !important;
+      position: relative;
+    }
+    .ub-divbar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(15, 107, 79, 0.11) 1px, transparent 1.2px);
+      background-size: 18px 18px;
+      opacity: 0.65;
+    }
+    #divisionPillsWrap > div {
+      position: relative;
+      z-index: 1;
+    }
+    #divisionPillsWrap > div > span:first-child {
+      background: #ffffff !important;
+      color: var(--accent) !important;
+      border: 1px solid rgba(15, 107, 79, 0.20) !important;
+      border-radius: 99px !important;
+    }
+    .lux-chip {
+      background: rgba(255, 255, 255, 0.82) !important;
+      border: 1px solid rgba(15, 60, 40, 0.12) !important;
+      color: var(--ink) !important;
+      border-radius: 99px !important;
+    }
+    .lux-chip:hover {
+      background: #ffffff !important;
+      border-color: var(--accent) !important;
+      color: var(--accent) !important;
+    }
+    .lux-chip.active {
+      background: var(--ink) !important;
+      border-color: var(--ink) !important;
+      color: #ffffff !important;
+    }
+    .lux-chip.active span:last-child {
+      color: var(--mint-glow) !important;
+    }
+
+    /* MapBangladesh Editorial Kicker Rule (28px emerald line before section eyebrow) */
+    .ub-cu-ey,
+    #dirEyebrow,
+    #timelineEyebrow {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 10px;
+      background: transparent !important;
+      padding: 0 !important;
+      color: var(--accent) !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.05em;
+      border-radius: 0 !important;
+    }
+    .ub-cu-ey::before,
+    #dirEyebrow::before,
+    #timelineEyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      display: inline-block;
+    }
+
+    /* MapBangladesh Crisp White Cards & 1px Hairline Grids (.fgrid / .aud pattern) */
+    .lux-card {
+      background: var(--card) !important;
+      border: 1px solid var(--line) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 30px 60px -48px rgba(15, 50, 35, 0.30) !important;
+    }
+
+    #allDistrictsDirectory {
+      gap: 1px !important;
+      background: #dcdfda !important;
+      border: 1px solid #dcdfda !important;
+      border-radius: 24px !important;
+      overflow: hidden !important;
+    }
+    #allDistrictsDirectory > div {
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: #f8faf8 !important;
+      transition: background-color 0.22s ease !important;
+    }
+    #allDistrictsDirectory > div:hover {
+      transform: none !important;
+      background: #ffffff !important;
+      box-shadow: none !important;
+    }
+
+    #nationalTimelineGrid {
+      gap: 1px !important;
+      background: #dcdfda !important;
+      border: 1px solid #dcdfda !important;
+      border-radius: 24px !important;
+      overflow: hidden !important;
+    }
+    #nationalTimelineGrid > button,
+    #nationalTimelineGrid > div {
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: #eceeea !important;
+      transition: background-color 0.22s ease !important;
+    }
+    #nationalTimelineGrid > button:hover,
+    #nationalTimelineGrid > div:hover {
+      transform: none !important;
+      background: #ffffff !important;
+      box-shadow: none !important;
+    }
+
+    /* MapBangladesh Segmented Tabs (.langs) & Buttons (.btn.dark / .btn.go) */
+    .tab-btn,
+    .origin-seg-btn {
+      background: rgba(255, 255, 255, 0.78) !important;
+      border: 1px solid rgba(15, 60, 40, 0.12) !important;
+      color: #55635b !important;
+    }
+    .tab-btn:hover,
+    .origin-seg-btn:hover {
+      background: #ffffff !important;
+      color: var(--ink) !important;
+    }
+    .tab-btn.active,
+    .origin-seg-btn.active {
+      background: var(--ink) !important;
+      border-color: var(--ink) !important;
+      color: #ffffff !important;
+    }
+
+    /* MapBangladesh Dark Closing Band (.again pattern with #7fd3a8 mint corner glow) */
+    .ub-ft {
+      background: var(--ink) !important;
+      color: var(--on-dark-muted) !important;
+      border-top: 1px solid rgba(127, 211, 168, 0.14) !important;
+    }
+    .ub-ft::before {
+      background: radial-gradient(circle at 88% 0%, rgba(127, 211, 168, 0.26), transparent 56%) !important;
+    }
+    .ub-ft-link:hover {
+      color: #7fd3a8 !important;
+    }
+
+    /* MapBangladesh Text Reveal Animation (Blur-to-Focus + Rise) */
+    .mb-text-reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      filter: blur(5px);
+      transition: opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1), transform 0.62s cubic-bezier(0.22, 1, 0.36, 1), filter 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform, filter;
+    }
+    .mb-text-reveal.is-shown {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* MapBangladesh Gentle Bobbing Indicator */
+    @keyframes mbBob { 50% { transform: translateY(4px); } }
+    .mb-bob { animation: mbBob 1.8s ease-in-out infinite; }
+
+    /* Scroll-linked child drift targets */
+    .mb-drift-grid > * > * {
+      will-change: transform, opacity;
+      transform-origin: left center;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mb-text-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
+      .mb-bob { animation: none !important; }
+    }
+

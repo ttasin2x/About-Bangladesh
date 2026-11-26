@@ -1,0 +1,807 @@
+    /* === Soft Sage Botanical Bento UI/UX System (Inspired by Uploaded Mobile Dashboard Screens) === */
+    :root {
+      --bg: #E9F1EA;
+      --surface: #FFFFFF;
+      --canvas-bg: #E9F1EA;
+      --canvas-sage: #DFECE2;
+      --card: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --ink: #1D2423;
+      --ink-body: #34403C;
+      --muted: #65726C;
+      --line: rgba(29, 36, 35, 0.08);
+      --outline: rgba(29, 36, 35, 0.08);
+      --accent: #3A9B65;
+      --accent-2: #D8EFE0;
+      --brand: #3A9B65;
+      --brand-deep: #2A7D4F;
+      --deep: #1D2423;
+      --mint-bento: #C5E5CF;
+      --butter-bento: #F2F4CE;
+      --sage-bento: #D9EFE0;
+      --charcoal-bento: #1D2423;
+    }
+
+    /* Soft Botanical-Sage Ambient Canvas with Dreamy Green Corner Blooms */
+    body {
+      background-color: #E8F0E9 !important;
+      background-image:
+        radial-gradient(ellipse 60% 45% at 8% 18%, rgba(164, 214, 178, 0.42) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at 92% 42%, rgba(176, 222, 188, 0.36) 0%, transparent 68%),
+        radial-gradient(ellipse 50% 40% at 15% 82%, rgba(188, 226, 198, 0.34) 0%, transparent 65%) !important;
+      background-attachment: fixed !important;
+      color: var(--ink) !important;
+    }
+
+    /* Frosted Glass Floating Pill Navbar */
+    .ub-nav-wrap[data-tucked="true"] .ub-nav,
+    body.subpage-active .ub-nav {
+      background: rgba(255, 255, 255, 0.86) !important;
+      backdrop-filter: blur(18px) saturate(1.4) !important;
+      -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+      border: 1px solid rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 14px 34px -18px rgba(24, 48, 36, 0.22) !important;
+    }
+    .ub-nav-wrap[data-tucked="true"] .ts-nav-chip,
+    body.subpage-active .ts-nav-chip {
+      background: #1D2423 !important;
+    }
+
+    /* Hero Primary Button: Vibrant Botanical Green (#3A9B65) with Circular Arrow Badge */
+    #btnCycleDivision {
+      background: #3A9B65 !important;
+      color: #FFFFFF !important;
+      padding: 0 7px 0 18px !important;
+      gap: 10px !important;
+      box-shadow: 0 10px 24px -10px rgba(58, 155, 101, 0.65) !important;
+    }
+    #btnCycleDivision:hover {
+      background: #318857 !important;
+      transform: translateY(-1.5px);
+    }
+    #btnCycleDivision span[aria-hidden="true"] {
+      background: #1D2423 !important;
+      color: #FFFFFF !important;
+      width: 28px !important;
+      height: 28px !important;
+      font-size: 13px !important;
+    }
+    #btnCycleDivision:hover span[aria-hidden="true"] {
+      background: #FFFFFF !important;
+      color: #1D2423 !important;
+      transform: translateX(3px);
+    }
+
+    /* Pastel Bento Metric Tiles (#ubTrustBar / .ub-stats — inspired by 12 / 21 / 43 Dashboard Cards) */
+    .ub-trust {
+      background: transparent !important;
+      padding: 20px 16px 10px !important;
+    }
+    .ub-stats {
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      overflow: visible !important;
+      gap: 12px !important;
+      box-shadow: none !important;
+    }
+    .ub-stats button {
+      border-radius: 26px !important;
+      border: 1px solid rgba(255, 255, 255, 0.88) !important;
+      background: rgba(255, 255, 255, 0.90) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 18px 16px !important;
+      box-shadow: 0 14px 30px -22px rgba(24, 52, 38, 0.22) !important;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease !important;
+    }
+    .ub-stats button:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 20px 36px -20px rgba(24, 52, 38, 0.30) !important;
+    }
+    /* Signature Pastel Bento Tints matching Screenshot 2 (White, Soft Mint, Soft Butter, Sage, Charcoal) */
+    .ub-stats li:nth-child(2) button {
+      background: #C5E5CF !important;
+      border-color: rgba(255, 255, 255, 0.65) !important;
+    }
+    .ub-stats li:nth-child(3) button {
+      background: #F2F4CE !important;
+      border-color: rgba(255, 255, 255, 0.72) !important;
+    }
+    .ub-stats li:nth-child(5) button {
+      background: #D8EFE0 !important;
+      border-color: rgba(255, 255, 255, 0.68) !important;
+    }
+    .ub-stats li:nth-child(6) button {
+      background: #1D2423 !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #FFFFFF !important;
+    }
+    .ub-stats li:nth-child(6) button * {
+      color: #FFFFFF !important;
+    }
+    .ub-stats li:nth-child(6) button span:last-child {
+      color: rgba(216, 239, 224, 0.76) !important;
+    }
+
+    /* Floating White & Charcoal Pill Division Selector (Screenshot 2 Right: Clinic Trials / Pediatric / Heart) */
+    .ub-divbar {
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    .ub-divbar::before {
+      display: none !important;
+    }
+    #divisionPillsWrap > div {
+      padding-top: 8px !important;
+      padding-bottom: 10px !important;
+    }
+    #divisionPillsWrap > div > span:first-child {
+      background: #3A9B65 !important;
+      color: #FFFFFF !important;
+      border: 0 !important;
+      padding: 7px 14px !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 8px 18px -10px rgba(58, 155, 101, 0.65) !important;
+    }
+    .lux-chip {
+      background: rgba(255, 255, 255, 0.94) !important;
+      color: #1D2423 !important;
+      border: 1px solid rgba(255, 255, 255, 0.96) !important;
+      border-radius: 9999px !important;
+      height: 38px !important;
+      padding: 0 16px !important;
+      box-shadow: 0 8px 20px -14px rgba(24, 52, 38, 0.24) !important;
+    }
+    .lux-chip:hover {
+      background: #FFFFFF !important;
+      color: #3A9B65 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -14px rgba(24, 52, 38, 0.30) !important;
+    }
+    .lux-chip.active {
+      background: #1D2423 !important;
+      color: #FFFFFF !important;
+      border-color: #1D2423 !important;
+      box-shadow: 0 12px 24px -12px rgba(29, 36, 35, 0.50) !important;
+    }
+    .lux-chip.active span:last-child {
+      color: #7ED9A4 !important;
+    }
+
+    /* Ultra-Rounded Frosted White Bento Cards (.lux-card & Showcase) */
+    .lux-card,
+    .famous-spotlight-card {
+      background: rgba(255, 255, 255, 0.90) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.95) !important;
+      border-radius: 28px !important;
+      box-shadow: 0 18px 42px -26px rgba(24, 52, 38, 0.22) !important;
+    }
+
+    /* Map Canvas Soft Botanical Sage Bento Stage */
+    .map-canvas {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.80) 0%, rgba(226, 241, 231, 0.62) 60%, rgba(206, 232, 214, 0.72) 100%),
+        radial-gradient(rgba(58, 155, 101, 0.14) 1px, transparent 1.2px) !important;
+      background-size: 100% 100%, 20px 20px !important;
+      border: 1px solid rgba(255, 255, 255, 0.90) !important;
+      border-radius: 24px !important;
+      box-shadow: inset 0 2px 12px rgba(24, 52, 38, 0.06) !important;
+    }
+    #mapLiveHud {
+      background: #3A9B65 !important;
+      color: #FFFFFF !important;
+      border: 0 !important;
+      box-shadow: 0 8px 18px -10px rgba(58, 155, 101, 0.65) !important;
+    }
+    #mapContainer button[id^="btnZoom"],
+    #mapContainer button[id^="btnReset"] {
+      background: #626E68 !important;
+      color: #FFFFFF !important;
+      border: 0 !important;
+      box-shadow: 0 8px 18px -10px rgba(29, 36, 35, 0.38) !important;
+    }
+    #mapContainer button[id^="btnZoom"]:hover,
+    #mapContainer button[id^="btnReset"]:hover {
+      background: #1D2423 !important;
+      transform: translateY(-1.5px);
+    }
+
+    /* Segmented Tabs & Pills (Charcoal Active + White Floating Inactive) */
+    .tab-btn,
+    .origin-seg-btn {
+      background: #FFFFFF !important;
+      color: #34403C !important;
+      border: 1px solid rgba(29, 36, 35, 0.08) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 4px 12px -8px rgba(24, 52, 38, 0.16);
+    }
+    .tab-btn:hover,
+    .origin-seg-btn:hover {
+      background: #F4FAF6 !important;
+      color: #1D2423 !important;
+    }
+    .tab-btn.active,
+    .origin-seg-btn.active {
+      background: #1D2423 !important;
+      color: #FFFFFF !important;
+      border-color: #1D2423 !important;
+      box-shadow: 0 10px 22px -12px rgba(29, 36, 35, 0.45) !important;
+    }
+
+    /* Airy Rounded Bento Cards for 64-District Directory & National Timeline */
+    #allDistrictsDirectory,
+    #nationalTimelineGrid {
+      gap: 14px !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      overflow: visible !important;
+    }
+    #allDistrictsDirectory > div {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(255, 255, 255, 0.96) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 14px 30px -22px rgba(24, 52, 38, 0.20) !important;
+      transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+    }
+    #allDistrictsDirectory > div:hover {
+      transform: translateY(-2.5px) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 20px 38px -22px rgba(24, 52, 38, 0.26) !important;
+    }
+    #nationalTimelineGrid > button,
+    #nationalTimelineGrid > div {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(255, 255, 255, 0.96) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 14px 30px -22px rgba(24, 52, 38, 0.20) !important;
+      transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+    }
+    #nationalTimelineGrid > button:nth-child(2n),
+    #nationalTimelineGrid > div:nth-child(2n) {
+      background: #E2F2E7 !important;
+    }
+    #nationalTimelineGrid > button:hover,
+    #nationalTimelineGrid > div:hover {
+      transform: translateY(-2.5px) !important;
+      box-shadow: 0 20px 38px -22px rgba(24, 52, 38, 0.28) !important;
+    }
+
+    /* Floating Frosted-White Mobile Bottom Dock (Exact Screenshot 1 & 2 Bottom Capsule!) */
+    .obsidian-dock {
+      background: rgba(255, 255, 255, 0.86) !important;
+      backdrop-filter: blur(20px) saturate(1.5) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.5) !important;
+      border: 1px solid rgba(255, 255, 255, 0.95) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 18px 40px -14px rgba(24, 52, 38, 0.28) !important;
+    }
+    .dock-bubble {
+      background: #1D2423 !important;
+      border: 0 !important;
+      box-shadow: 0 8px 18px -8px rgba(29, 36, 35, 0.45) !important;
+    }
+    .dock-item {
+      color: #5C6B64 !important;
+    }
+    .dock-item.active-nav {
+      color: #FFFFFF !important;
+    }
+
+    /* Charcoal-Obsidian Closing Footer Card (matching Screenshot 1 Center Bottom Dark Card) */
+    .ub-ft {
+      background: #1D2423 !important;
+      border-top: 0 !important;
+      border-radius: 32px 32px 0 0 !important;
+      margin: 44px 14px 0 !important;
+    }
+    .ub-ft::before {
+      background: radial-gradient(ellipse 68% 58% at 50% 0%, rgba(58, 155, 101, 0.28), transparent 66%) !important;
+    }
+    @media (max-width: 640px) {
+      .ub-ft {
+        margin: 32px 8px 0 !important;
+        border-radius: 26px 26px 0 0 !important;
+      }
+    }
+
+    /* === Compact Sleek Pastel Bento Stats Row + Top Scroll Progress + Floating Back-to-Top Pill === */
+    .ub-hero {
+      min-height: 535px !important;
+      padding: 112px 0 64px !important;
+    }
+
+    .ub-trust {
+      padding: 10px 16px 6px !important;
+    }
+    .ub-stats {
+      gap: 9px !important;
+    }
+    .ub-stats button {
+      padding: 9px 13px !important;
+      border-radius: 18px !important;
+      gap: 3px !important;
+      min-height: 0 !important;
+    }
+    .ub-stat-top {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 2px !important;
+      min-height: 18px !important;
+    }
+    .ub-stat-dot {
+      width: 14px !important;
+      height: 2.5px !important;
+      border-radius: 99px !important;
+    }
+    .ub-stat-arrow {
+      width: 20px !important;
+      height: 20px !important;
+      border-radius: 50% !important;
+      display: inline-grid !important;
+      place-items: center !important;
+      background: rgba(29, 36, 35, 0.08) !important;
+      color: #1D2423 !important;
+      font-size: 11px !important;
+      line-height: 1 !important;
+      opacity: 0.9 !important;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease !important;
+    }
+    .ub-stats button:hover .ub-stat-arrow {
+      background: #1D2423 !important;
+      color: #FFFFFF !important;
+      transform: translateX(2px) !important;
+    }
+    .ub-stats li:nth-child(6) button .ub-stat-arrow {
+      background: rgba(255, 255, 255, 0.16) !important;
+      color: #FFFFFF !important;
+    }
+    .ub-stats li:nth-child(6) button:hover .ub-stat-arrow {
+      background: #3A9B65 !important;
+      color: #FFFFFF !important;
+    }
+    .ub-stats b {
+      font-size: 19px !important;
+      line-height: 1.15 !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.02em !important;
+      margin: 0 !important;
+    }
+    .ub-stat-label {
+      font-size: 11px !important;
+      line-height: 1.3 !important;
+      margin-top: 2px !important;
+      opacity: 0.86;
+    }
+
+    /* Top Reading Progress Bar */
+    #ubScrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      width: 0%;
+      z-index: 9998;
+      pointer-events: none;
+      background: linear-gradient(90deg, #3A9B65 0%, #7ED9A4 100%);
+      transition: width 0.08s linear;
+    }
+
+    /* Floating Circular Back-to-Top Pill (#1D2423 -> #3A9B65 on hover) */
+    #ubBackTopBtn {
+      position: fixed;
+      right: 18px;
+      bottom: 22px;
+      z-index: 65;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: #1D2423;
+      color: #FFFFFF;
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 14px 30px -10px rgba(20, 36, 30, 0.45);
+      opacity: 0;
+      transform: translateY(12px) scale(0.92);
+      pointer-events: none;
+      transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
+    }
+    #ubBackTopBtn.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    #ubBackTopBtn:hover {
+      background: #3A9B65;
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 1023px) {
+      #ubBackTopBtn {
+        bottom: 84px;
+        right: 14px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* === Smaller Bangla/EN Toggle & Ultra-Compact Vertical Stat Cards === */
+    .ub-nav [role="group"] {
+      padding: 2px !important;
+      height: 30px !important;
+      gap: 1px !important;
+    }
+    #btnLangBn,
+    #btnLangEn {
+      height: 24px !important;
+      padding: 0 8px !important;
+      font-size: 11px !important;
+      line-height: 24px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    #btnTopMapQuick {
+      width: 30px !important;
+      height: 30px !important;
+    }
+    #btnTopMapQuick svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    .ub-trust {
+      padding: 8px 16px 4px !important;
+    }
+    .ub-stats {
+      gap: 8px !important;
+    }
+    .ub-stats button {
+      padding: 6px 11px !important;
+      border-radius: 15px !important;
+      gap: 1px !important;
+      min-height: 0 !important;
+    }
+    .ub-stat-top {
+      margin-bottom: 0 !important;
+      min-height: 14px !important;
+    }
+    .ub-stat-dot {
+      width: 12px !important;
+      height: 2px !important;
+    }
+    .ub-stat-arrow {
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 9.5px !important;
+    }
+    .ub-stats b {
+      font-size: 16.5px !important;
+      line-height: 1.1 !important;
+    }
+    .ub-stat-label {
+      font-size: 10.5px !important;
+      line-height: 1.2 !important;
+      margin-top: 1px !important;
+    }
+
+    /* === Footer Alignment Fix, Ultra-Light Green Base, UnseenBangladesh.com Crisp Boxes & Unified 64-District Grid === */
+    /* Full-bleed edge-to-edge footer left-to-right with screen */
+    .ub-ft {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 44px 0 0 !important;
+      border-radius: 0 !important;
+      box-sizing: border-box !important;
+    }
+    @media (max-width: 640px) {
+      .ub-ft {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 32px 0 0 !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    /* GPU-composited scroll progress bar (zero layout reflow on scroll) */
+    #ubScrollProgress {
+      width: 100% !important;
+      transform-origin: left center;
+      transform: scaleX(0);
+      will-change: transform;
+    }
+
+    /* 1. Eliminate GPU-choking backdrop-filter blur on fixed bars, docks & cards for 60-120fps scroll */
+    .ub-nav-wrap,
+    .ub-nav-wrap[data-tucked="true"],
+    .ub-nav-pill,
+    .ub-divbar,
+    .ub-dock,
+    .ub-dock-inner,
+    .obsidian-dock,
+    .floating-dock,
+    .glass-bar,
+    .map-controls,
+    .map-legend,
+    .lux-card,
+    .bklit-stat-card,
+    .famous-spotlight-card,
+    .lux-chip,
+    .ub-stats button,
+    #allDistrictsDirectory > div,
+    #nationalTimelineGrid > button,
+    #nationalTimelineGrid > div,
+    .modal-card,
+    .search-dropdown {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    html:not(.dark) .ub-nav-wrap[data-tucked="true"] .ub-nav,
+    html:not(.dark) body.subpage-active .ub-nav {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border: 1px solid #E4E8E6 !important;
+      box-shadow: 0 4px 16px -12px rgba(22, 33, 28, 0.14) !important;
+    }
+    html:not(.dark) .obsidian-dock {
+      background: rgba(255, 255, 255, 0.97) !important;
+      border: 1px solid #DCE7E1 !important;
+      box-shadow: 0 8px 24px -14px rgba(22, 33, 28, 0.20) !important;
+    }
+    html.dark .ub-nav-wrap[data-tucked="true"] {
+      background: rgba(11, 18, 15, 0.96) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      box-shadow: none !important;
+    }
+
+    /* 2. Previous Ultra-Light Green Canvas Background (clean solid for zero scroll repaints) */
+    html:not(.dark) {
+      --bg: #F4FAF6;
+      --canvas-bg: #F4FAF6;
+      --canvas-sage: #ECF6EF;
+      --surface: #FFFFFF;
+      --card: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --line: #E4E8E6;
+      --outline: #E4E8E6;
+      --chart-surface: #FFFFFF;
+      --chart-surface-muted: #F3FAF6;
+      --chart-border: #E4E8E6;
+    }
+    html:not(.dark) body {
+      background-color: #F4FAF6 !important;
+      background-image: none !important;
+      background-attachment: scroll !important;
+    }
+
+    /* 3. Softly-Merged Ultra-Light Green Box System (blends gently with #F4FAF6 background, crisp 1px tint border) */
+    html:not(.dark) .lux-card,
+    html:not(.dark) .famous-spotlight-card {
+      background: rgba(251, 254, 252, 0.74) !important;
+      border: 1px solid rgba(58, 155, 101, 0.11) !important;
+      border-radius: 18px !important;
+      box-shadow: none !important;
+      contain: layout style;
+      transition: background-color 0.18s ease, border-color 0.18s ease, opacity 0.72s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.72s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+    }
+    html:not(.dark) .lux-card:hover,
+    html:not(.dark) .famous-spotlight-card:hover {
+      background: rgba(253, 255, 253, 0.88) !important;
+      border-color: rgba(58, 155, 101, 0.18) !important;
+      box-shadow: none !important;
+    }
+
+    html:not(.dark) .bklit-stat-card,
+    html:not(.dark) .ub-stats button,
+    html:not(.dark) #nationalTimelineGrid > button,
+    html:not(.dark) #nationalTimelineGrid > div {
+      background: rgba(251, 254, 252, 0.76) !important;
+      border: 1px solid rgba(58, 155, 101, 0.11) !important;
+      border-radius: 14px !important;
+      box-shadow: none !important;
+      contain: layout style;
+      transition: background-color 0.18s ease, border-color 0.18s ease, opacity 0.72s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.72s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+    }
+    html:not(.dark) .bklit-stat-card:hover,
+    html:not(.dark) .ub-stats button:hover,
+    html:not(.dark) #nationalTimelineGrid > button:hover,
+    html:not(.dark) #nationalTimelineGrid > div:hover {
+      transform: none !important;
+      background: rgba(242, 249, 245, 0.92) !important;
+      border-color: rgba(58, 155, 101, 0.20) !important;
+      box-shadow: none !important;
+    }
+    html:not(.dark) .bklit-stat-card::before,
+    html:not(.dark) .bklit-stat-card::after {
+      display: none !important;
+    }
+
+    /* Soft sage accent tiles matching UnseenBangladesh.com */
+    html:not(.dark) .ub-stats li:nth-child(2) button,
+    html:not(.dark) .ub-stats li:nth-child(5) button,
+    html:not(.dark) #nationalTimelineGrid > button:nth-child(2n),
+    html:not(.dark) #nationalTimelineGrid > div:nth-child(2n) {
+      background: #F3FAF6 !important;
+      border-color: #D6EBDF !important;
+    }
+    html:not(.dark) .ub-stats li:nth-child(3) button {
+      background: #F7FAF2 !important;
+      border-color: #E2ECD5 !important;
+    }
+    html:not(.dark) .ub-stats li:nth-child(6) button {
+      background: #1D2423 !important;
+      border-color: #1D2423 !important;
+      color: #FFFFFF !important;
+    }
+    html:not(.dark) .ub-stats li:nth-child(6) button:hover {
+      background: #141A19 !important;
+      border-color: #141A19 !important;
+    }
+
+    html:not(.dark) .map-canvas {
+      background: #EEF8F2 !important;
+      border: 1px solid #DDEBE3 !important;
+      border-radius: 16px !important;
+      box-shadow: none !important;
+    }
+
+    html:not(.dark) .lux-chip:not(.active) {
+      background: #FFFFFF !important;
+      border: 1px solid #E4E8E6 !important;
+      box-shadow: none !important;
+      transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease !important;
+    }
+    html:not(.dark) .lux-chip:not(.active):hover {
+      transform: none !important;
+      background: #F5F7F6 !important;
+      border-color: #C7DBD0 !important;
+      box-shadow: none !important;
+    }
+    html:not(.dark) .lux-chip.active {
+      background: #1D2423 !important;
+      border: 1px solid #1D2423 !important;
+      color: #FFFFFF !important;
+      box-shadow: none !important;
+    }
+    html:not(.dark) .tab-btn:not(.active),
+    html:not(.dark) .origin-seg-btn:not(.active) {
+      background: #FFFFFF !important;
+      border: 1px solid #E4E8E6 !important;
+      box-shadow: none !important;
+    }
+
+    html:not(.dark) main .bg-white,
+    html:not(.dark) main .bg-white\/90,
+    html:not(.dark) main .bg-white\/80 {
+      background-color: rgba(251, 254, 252, 0.74) !important;
+    }
+    html:not(.dark) main .border-\[\#E4E8E6\],
+    html:not(.dark) main .border-\[\#E5E8E0\],
+    html:not(.dark) main .border-\[\#EAECE6\],
+    html:not(.dark) main .border-\[\#DDE5E1\],
+    html:not(.dark) main .border-\[\#DCE6DF\],
+    html:not(.dark) main .border-\[\#D5E6DC\] {
+      border-color: #E4E8E6 !important;
+    }
+
+    /* 4. 64-District Directory: Unified Soft-Merged Hairline Grid */
+    #allDistrictsDirectory {
+      gap: 1px !important;
+      background: rgba(58, 155, 101, 0.12) !important;
+      border: 1px solid rgba(58, 155, 101, 0.12) !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+    }
+    html:not(.dark) #allDistrictsDirectory > div {
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: rgba(251, 254, 252, 0.78) !important;
+      box-shadow: none !important;
+      contain: layout style;
+      transition: background-color 0.18s ease, opacity 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+    }
+    html:not(.dark) #allDistrictsDirectory > div.bg-\[\#EDF5F0\] {
+      background: #EEF8F2 !important;
+    }
+    html:not(.dark) #allDistrictsDirectory > div:hover {
+      transform: none !important;
+      background: #F5F7F6 !important;
+      box-shadow: none !important;
+    }
+    html.dark #allDistrictsDirectory {
+      gap: 1px !important;
+      background: rgba(255, 255, 255, 0.09) !important;
+      border: 1px solid rgba(255, 255, 255, 0.09) !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+    }
+    html.dark #allDistrictsDirectory > div {
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      contain: layout style;
+    }
+
+    /* Dark mode crisp flat boxes */
+    html.dark .lux-card,
+    html.dark .famous-spotlight-card,
+    html.dark .bklit-stat-card,
+    html.dark .ub-stats button,
+    html.dark #nationalTimelineGrid > button,
+    html.dark #nationalTimelineGrid > div {
+      box-shadow: none !important;
+      contain: layout style;
+    }
+
+    /* 5. Kill software-rasterized SVG drop-shadow & blur animations that stall scroll */
+    #bdMapSvg path,
+    #bdMapSvg .district-path,
+    #bdMapSvg .division-path,
+    .map-canvas svg,
+    .map-canvas svg path {
+      filter: none !important;
+    }
+    .ub-hero::before,
+    .ub-hero-shade,
+    .bklit-stat-card .bklit-shimmer,
+    .bklit-sweep {
+      animation: none !important;
+    }
+    .ub-hero-shade {
+      transform: none !important;
+    }
+
+    /* Smooth GPU-only scroll reveals (no content-visibility pop-in) */
+    section[id],
+    .page-section > section {
+      contain: layout style;
+    }
+    /* Exact UnseenBangladesh.com Smooth Scroll-Reveal (.rv + .cu-row feel) */
+    html body .mb-text-reveal {
+      opacity: 0 !important;
+      filter: none !important;
+      transform: translate3d(0, 22px, 0) !important;
+      transition: opacity 0.68s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.68s cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+      transition-delay: calc(var(--rv-i, 0) * 55ms) !important;
+      will-change: opacity, transform;
+    }
+    html body .mb-text-reveal.is-shown {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) !important;
+      filter: none !important;
+      will-change: auto;
+    }
+    html body [data-ts-enter] {
+      opacity: 0 !important;
+      transform: translate3d(0, 28px, 0) scale(0.985) !important;
+      transition: opacity 0.72s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.72s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.18s ease, border-color 0.18s ease !important;
+      transition-delay: calc(var(--enter-i, 0) * 65ms), calc(var(--enter-i, 0) * 65ms), 0ms, 0ms !important;
+      will-change: opacity, transform;
+    }
+    html body [data-ts-enter].is-in {
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) scale(1) !important;
+      will-change: auto;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html body .mb-text-reveal,
+      html body [data-ts-enter] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+    @keyframes auBlurIn {
+      from { opacity: 0; transform: translate3d(0, 6px, 0); }
+      to   { opacity: 1; transform: translate3d(0, 0, 0); }
+    }
+    @keyframes auIconSpinIn {
+      from { opacity: 0; transform: rotate(-28deg) scale(0.85); }
+      to   { opacity: 1; transform: rotate(0deg) scale(1); }
+    }
