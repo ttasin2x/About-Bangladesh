@@ -121,7 +121,7 @@
 
             <div class="md:col-span-5 flex flex-col items-center md:items-start">
               <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-[#F4FAF6] border-4 border-[#EEF5F0] shadow-sm mx-auto md:mx-0">
-                <img src="${creatorAvatar}" alt="Tanvir Tasin" class="w-full h-full object-cover object-top" />
+                <img src="${creatorAvatar}" alt="Tanvir Tasin" loading="lazy" decoding="async" class="w-full h-full object-cover object-top" />
               </div>
               <div class="mt-5 space-y-2 text-xs sm:text-sm font-semibold text-[#16211C]">
                 <a href="https://tanvir-tasin.pages.dev/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 hover:text-[#0F6B4F] transition">

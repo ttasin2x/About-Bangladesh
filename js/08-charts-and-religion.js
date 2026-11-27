@@ -568,7 +568,7 @@
         bodyEl.innerHTML = `
           <article class="famous-spotlight-card">
             <div class="famous-spotlight-media">
-              <img src="${imgSrc}" alt="${caption}" loading="eager" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallbackUri}';" />
+              <img src="${imgSrc}" alt="${caption}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='${fallbackUri}';" />
               <div class="famous-caption-chip">${caption}</div>
             </div>
             <div class="space-y-4">
@@ -610,7 +610,7 @@
           return `
             <button type="button" onclick="focusDistrictFromCard('${d.id}', false)" class="famous-dist-card group">
               <div class="ub-thumb">
-                <img src="${imgSrc}" alt="${caption}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallbackUri}';" />
+                <img src="${imgSrc}" alt="${caption}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${fallbackUri}';" />
               </div>
               <div class="space-y-1.5 w-full">
                 <div class="flex items-center justify-between gap-2">
