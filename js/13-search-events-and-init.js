@@ -531,19 +531,13 @@
           });
         }, { threshold: 0.06, rootMargin: '0px 0px -48px 0px' });
 
+        // Phase 1: Batch DOM writes before layout reads (zero layout thrashing)
+        const vhInit = (window.innerHeight || 800) * 0.88;
         textTargets.forEach((el, idx) => {
           el.classList.add('mb-text-reveal');
           el.style.setProperty('--rv-i', String(idx % 4));
           if (resetVisible) el.classList.remove('is-shown');
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
-            requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-shown')));
-          } else {
-            textIo.observe(el);
-          }
         });
-
-        // 2) UnseenBangladesh-style Smooth Block, Card & Footer Reveal (.rv -> .in feel)
         const cardTargets = Array.from(activePage.querySelectorAll('.lux-card, .famous-spotlight-card, .bklit-stat-card, #ubPhotoShowcase, #allDistrictsDirectory > div, #nationalTimelineGrid > button, #nationalTimelineGrid > div'));
         const ftEl = document.querySelector('.ub-ft');
         if (ftEl) cardTargets.push(ftEl);
@@ -560,33 +554,59 @@
           el.setAttribute('data-ts-enter', '');
           el.style.setProperty('--enter-i', String(idx % 4));
           if (resetVisible) el.classList.remove('is-in');
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
-            requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('is-in')));
-          } else {
-            cardIo.observe(el);
-          }
         });
 
-        // Lightweight scroll fallback to guarantee reveal inside any viewport/iframe
+        // Phase 2: Batch all getBoundingClientRect reads in one pass
+        const immediateTexts = [];
+        textTargets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < vhInit && rect.bottom > 0) immediateTexts.push(el);
+          else textIo.observe(el);
+        });
+        const immediateCards = [];
+        cardTargets.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < vhInit && rect.bottom > 0) immediateCards.push(el);
+          else cardIo.observe(el);
+        });
+
+        // Phase 3: Reveal initially visible items in a single rAF batch
+        if (immediateTexts.length || immediateCards.length) {
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            immediateTexts.forEach((el) => el.classList.add('is-shown'));
+            immediateCards.forEach((el) => el.classList.add('is-in'));
+          }));
+        }
+
+        // Batched, throttled scroll fallback (zero Read-Write thrashing, auto-skips when done)
         if (!window.__ubRevealScrollBound) {
           window.__ubRevealScrollBound = true;
-          let rvRaf = 0;
+          let rvTimer = 0;
           const checkVisible = () => {
-            rvRaf = 0;
-            const vh = window.innerHeight || 800;
-            const cutoff = vh * 0.94;
-            document.querySelectorAll('[data-ts-enter]:not(.is-in)').forEach((el) => {
-              const r = el.getBoundingClientRect();
-              if (r.width > 0 && r.top < cutoff && r.bottom > 0) el.classList.add('is-in');
-            });
-            document.querySelectorAll('.mb-text-reveal:not(.is-shown)').forEach((el) => {
-              const r = el.getBoundingClientRect();
-              if (r.width > 0 && r.top < cutoff && r.bottom > 0) el.classList.add('is-shown');
-            });
+            rvTimer = 0;
+            const pendingCards = document.querySelectorAll('[data-ts-enter]:not(.is-in)');
+            const pendingTexts = document.querySelectorAll('.mb-text-reveal:not(.is-shown)');
+            if (!pendingCards.length && !pendingTexts.length) return;
+            const cutoff = (window.innerHeight || 800) * 0.94;
+            const showCards = [];
+            const showTexts = [];
+            for (let i = 0; i < pendingCards.length; i++) {
+              const r = pendingCards[i].getBoundingClientRect();
+              if (r.width > 0 && r.top < cutoff && r.bottom > 0) showCards.push(pendingCards[i]);
+            }
+            for (let i = 0; i < pendingTexts.length; i++) {
+              const r = pendingTexts[i].getBoundingClientRect();
+              if (r.width > 0 && r.top < cutoff && r.bottom > 0) showTexts.push(pendingTexts[i]);
+            }
+            if (showCards.length || showTexts.length) {
+              requestAnimationFrame(() => {
+                for (let i = 0; i < showCards.length; i++) showCards[i].classList.add('is-in');
+                for (let i = 0; i < showTexts.length; i++) showTexts[i].classList.add('is-shown');
+              });
+            }
           };
           window.addEventListener('scroll', () => {
-            if (!rvRaf) rvRaf = requestAnimationFrame(checkVisible);
+            if (!rvTimer) rvTimer = setTimeout(checkVisible, 120);
           }, { passive: true });
         }
 
