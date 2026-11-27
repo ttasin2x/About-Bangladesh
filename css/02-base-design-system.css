@@ -35,7 +35,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: 'NotoSansBengali', system-ui, -apple-system, sans-serif;
+      font-family: 'Hind Siliguri', system-ui, -apple-system, sans-serif;
       font-size: 16px;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -48,7 +48,7 @@
     }
 
     h1, h2, h3, h4, .font-heading {
-      font-family: 'HindSiliguri', 'NotoSansBengali', system-ui, sans-serif;
+      font-family: 'Hind Siliguri', system-ui, sans-serif;
       letter-spacing: -0.01em;
     }
 
@@ -196,7 +196,7 @@
     }
     .ub-hero h1 {
       margin: 0 0 14px;
-      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
       font-weight: 600;
       font-size: clamp(36px, 5.2vw, 60px);
       line-height: 1.12;
@@ -291,7 +291,7 @@
     }
     .ub-stats b {
       display: block;
-      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
       font-size: clamp(26px, 2.6vw, 36px);
       font-weight: 700;
       line-height: 1.1;
@@ -464,7 +464,7 @@
     .map-pill-bg { fill: #FFFFFF; stroke: #CFD9D3; stroke-width: 1; }
     .map-pill-bg.active-pill { fill: #0B4D36; stroke: #0B4D36; stroke-width: 1.2; }
     .map-pill-text {
-      font-family: 'HindSiliguri', 'NotoSansBengali', sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
       font-weight: 700;
       text-anchor: middle;
       dominant-baseline: central;
@@ -474,7 +474,7 @@
 
     .dist-label {
       pointer-events: none;
-      font-family: 'NotoSansBengali', sans-serif;
+      font-family: 'Hind Siliguri', sans-serif;
       font-weight: 700;
       text-anchor: middle;
       dominant-baseline: central;

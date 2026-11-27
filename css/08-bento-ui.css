@@ -805,3 +805,56 @@
       from { opacity: 0; transform: rotate(-28deg) scale(0.85); }
       to   { opacity: 1; transform: rotate(0deg) scale(1); }
     }
+
+    /* Dashed Node-Box "Read This" Footer Button (Ultra-Light Green, Zero Glow) */
+    .ub-readthis-node-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 30px;
+      border-radius: 8px;
+      background: rgba(220, 252, 231, 0.08) !important;
+      border: 1.5px dashed #C6F3D6 !important;
+      color: #E6FCEE !important;
+      font-family: 'Hind Siliguri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      cursor: pointer;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      filter: none !important;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+    .ub-readthis-node-btn:hover {
+      background: rgba(220, 252, 231, 0.14) !important;
+      border-color: #DCFCE7 !important;
+      color: #F4FEF7 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      filter: none !important;
+    }
+    .ub-readthis-node-btn .ub-node-dot {
+      position: absolute;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      margin-top: -4.5px;
+      border-radius: 2.5px;
+      background: #1D2423;
+      border: 1.5px solid #C6F3D6;
+      box-shadow: none !important;
+      pointer-events: none;
+      transition: border-color 0.18s ease;
+    }
+    .ub-readthis-node-btn .ub-node-l {
+      left: -5.5px;
+    }
+    .ub-readthis-node-btn .ub-node-r {
+      right: -5.5px;
+    }
+    .ub-readthis-node-btn:hover .ub-node-dot {
+      border-color: #DCFCE7;
+    }
