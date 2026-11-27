@@ -1,0 +1,19 @@
+{
+  "name": "বঙ্গভূমি — আমার বাংলাদেশ সম্পর্কে",
+  "short_name": "বঙ্গভূমি",
+  "description": "বাংলাদেশের ৮টি বিভাগ ও ৬৪টি জেলার ইন্টারঅ্যাক্টিভ মানচিত্র, উৎপত্তি ও ইতিহাস, ৫০টি নৃগোষ্ঠী, ধর্মীয় জনমিতি ও অ্যানিমেটেড ট্যুর।",
+  "lang": "bn-BD",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F7F6",
+  "theme_color": "#0F6B4F",
+  "icons": [
+    {
+      "src": "image/icon.webp",
+      "sizes": "500x500",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

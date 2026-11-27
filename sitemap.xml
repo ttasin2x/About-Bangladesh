@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://about-bangladesh.pages.dev/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://about-bangladesh.pages.dev/preview.webp</image:loc>
+      <image:title>বঙ্গভূমি — আমার বাংলাদেশ সম্পর্কে</image:title>
+      <image:caption>বাংলাদেশের ৮ বিভাগ, ৬৪ জেলা, ইতিহাস, ৫০টি নৃগোষ্ঠী ও অ্যানিমেটেড মানচিত্র পোর্টাল</image:caption>
+    </image:image>
+  </url>
+</urlset>
