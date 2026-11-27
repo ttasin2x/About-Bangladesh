@@ -177,15 +177,18 @@
             <div class="md:col-span-7">
               <h2 class="font-heading text-2xl sm:text-[26px] font-bold text-[#16211C] mb-5">Softwares</h2>
               <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-                <!-- 3 Crisp App Icon Tiles: AI, Canva, UI/UX Design -->
-                <div class="sm:col-span-6 grid grid-cols-3 gap-3 max-w-[260px]">
-                  <div class="aspect-square rounded-[18px] bg-[#330000] text-[#FF9A00] flex items-center justify-center font-heading text-2xl sm:text-3xl font-extrabold tracking-tight select-none" title="AI / Illustrator">Ai</div>
-                  <div class="aspect-square rounded-[18px] text-white flex items-center justify-center font-heading text-xl sm:text-2xl font-black italic tracking-tight select-none" style="background:linear-gradient(135deg,#00C4CC 0%,#7D2AE8 100%)" title="Canva">Canva</div>
-                  <div class="aspect-square rounded-[18px] bg-[#16211C] text-[#7ED9A4] flex items-center justify-center font-heading text-lg sm:text-xl font-extrabold tracking-tight select-none" title="UI/UX Design">UI/UX</div>
+                <!-- 2x2 Crisp App Icon Tiles: AI, Canva, UI/UX Design, GitHub -->
+                <div class="sm:col-span-6 grid grid-cols-2 gap-3 max-w-[220px]">
+                  <div class="aspect-square rounded-[18px] bg-[#330000] text-[#FF9A00] flex items-center justify-center font-heading text-3xl font-extrabold tracking-tight select-none" title="AI / Illustrator">Ai</div>
+                  <div class="aspect-square rounded-[18px] text-white flex items-center justify-center font-heading text-xl font-black italic tracking-tight select-none" style="background:linear-gradient(135deg,#00C4CC 0%,#7D2AE8 100%)" title="Canva">Canva</div>
+                  <div class="aspect-square rounded-[18px] bg-[#16211C] text-[#7ED9A4] flex items-center justify-center font-heading text-lg font-extrabold tracking-tight select-none" title="UI/UX Design">UI/UX</div>
+                  <a href="https://github.com/ttasin2x-droid" target="_blank" rel="noopener noreferrer" class="aspect-square rounded-[18px] bg-[#181717] text-white flex items-center justify-center hover:bg-[#24292F] transition select-none" title="GitHub">
+                    <svg class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0.3C5.37 0.3 0 5.67 0 12.3c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.22.7.83.58C20.57 22.1 24 17.6 24 12.3 24 5.67 18.63 0.3 12 0.3z"/></svg>
+                  </a>
                 </div>
 
                 <!-- Slim Horizontal Progress Bars -->
-                <div class="sm:col-span-6 space-y-4">
+                <div class="sm:col-span-6 space-y-3.5">
                   <div>
                     <div class="text-xs font-semibold text-[#16211C] mb-1">AI</div>
                     <div class="w-full h-2 bg-[#E2ECE6] rounded-full overflow-hidden"><div class="h-full rounded-full bg-[#F59E0B]" style="width:92%"></div></div>
@@ -197,6 +200,10 @@
                   <div>
                     <div class="text-xs font-semibold text-[#16211C] mb-1">UI/UX Design</div>
                     <div class="w-full h-2 bg-[#E2ECE6] rounded-full overflow-hidden"><div class="h-full rounded-full bg-[#0F6B4F]" style="width:90%"></div></div>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-[#16211C] mb-1">GitHub</div>
+                    <div class="w-full h-2 bg-[#E2ECE6] rounded-full overflow-hidden"><div class="h-full rounded-full bg-[#24292F]" style="width:88%"></div></div>
                   </div>
                 </div>
               </div>
