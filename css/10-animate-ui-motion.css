@@ -118,8 +118,8 @@
 
     /* Animate UI Light Blur Bridge for In-Place Swaps (Page Switch, Theme Icon, Text Swap) */
     @keyframes auiBlurIn {
-      from { opacity: 0; filter: blur(4px); transform: translate3d(0, 6px, 0); }
-      to   { opacity: 1; filter: blur(0px); transform: translate3d(0, 0, 0); }
+      from { opacity: 0; transform: translate3d(0, 6px, 0); }
+      to   { opacity: 1; transform: translate3d(0, 0, 0); }
     }
     .aui-blur-swap {
       animation: auiBlurIn var(--dur-swap) var(--ease-out-soft) both;
